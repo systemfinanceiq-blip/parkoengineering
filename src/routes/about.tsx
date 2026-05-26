@@ -1,0 +1,119 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SiteLayout } from "@/components/SiteLayout";
+import { CheckCircle2, Award, Target, Eye } from "lucide-react";
+import aboutImg from "@/assets/about-engineer.jpg";
+import { PageHeader } from "@/components/PageHeader";
+
+export const Route = createFileRoute("/about")({
+  head: () => ({
+    meta: [
+      { title: "About Us — Parko Engineering Limited" },
+      {
+        name: "description",
+        content:
+          "Learn about Parko Engineering Limited — a Ghanaian construction and engineering firm with over 20 years of structural excellence.",
+      },
+      { property: "og:title", content: "About Us — Parko Engineering" },
+      {
+        property: "og:description",
+        content: "Two decades of structural engineering excellence across Ghana.",
+      },
+    ],
+  }),
+  component: AboutPage,
+});
+
+function AboutPage() {
+  return (
+    <SiteLayout>
+      <PageHeader
+        eyebrow="ABOUT US"
+        title="Built On Discipline.\nDelivered With Pride."
+        subtitle="Parko Engineering Limited has spent over two decades engineering the structures that shape Ghana's commercial, residential and civil landscape."
+      />
+
+      <section className="py-20 md:py-24">
+        <div className="container-wide grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative">
+            <img
+              src={aboutImg}
+              alt="Parko Engineering site engineer reviewing blueprints"
+              width={1200}
+              height={1200}
+              loading="lazy"
+              className="w-full h-full object-cover rounded-md"
+            />
+            <div className="absolute -bottom-6 -right-6 hidden md:block bg-accent text-accent-foreground px-6 py-5 rounded-md shadow-xl">
+              <p className="font-display font-black text-4xl leading-none">20+</p>
+              <p className="text-xs font-bold tracking-[0.18em] mt-2">YEARS DELIVERING</p>
+            </div>
+          </div>
+
+          <div>
+            <p className="accent-line text-xs font-bold tracking-[0.22em] text-primary">OUR STORY</p>
+            <h2 className="mt-3 font-display font-black uppercase text-3xl md:text-4xl leading-tight">
+              Engineering That Outlasts Generations
+            </h2>
+            <p className="mt-5 text-muted-foreground leading-relaxed">
+              Founded with a single mandate — to bring world-class engineering discipline to every
+              site we manage — Parko has grown into one of Ghana's most trusted full-service
+              construction firms. Our work spans commercial high-rises, residential estates, civil
+              infrastructure, and heavy plant operations.
+            </p>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              We supervise our own sites, draft our own architecture, survey our own land, and
+              operate our own crane, backhoe and tipper fleet. That vertical integration is how we
+              deliver on time, on spec, and on budget — every time.
+            </p>
+            <ul className="mt-7 grid sm:grid-cols-2 gap-3">
+              {[
+                "Licensed contractor in Ghana",
+                "ISO 9001:2015 certified",
+                "Zero-incident HSE record",
+                "Member, GhIE & ABCECG",
+              ].map((b) => (
+                <li key={b} className="flex items-start gap-2 text-sm">
+                  <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+                  <span className="text-foreground">{b}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface py-20 md:py-24">
+        <div className="container-wide grid md:grid-cols-3 gap-5">
+          {[
+            {
+              icon: Target,
+              title: "Mission",
+              body:
+                "To deliver engineered structures that stand as a benchmark for safety, durability and craftsmanship.",
+            },
+            {
+              icon: Eye,
+              title: "Vision",
+              body:
+                "To be West Africa's most trusted name in vertically-integrated construction and civil engineering.",
+            },
+            {
+              icon: Award,
+              title: "Values",
+              body:
+                "Discipline. Accountability. Precision. Sustainability. Safety above all else, always.",
+            },
+          ].map((c) => (
+            <div key={c.title} className="bg-card border border-border rounded-md p-8 hover:border-accent transition-colors">
+              <div className="grid h-12 w-12 place-items-center bg-primary text-primary-foreground rounded-sm">
+                <c.icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 font-display font-bold text-xl uppercase">{c.title}</h3>
+              <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{c.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+    </SiteLayout>
+  );
+}

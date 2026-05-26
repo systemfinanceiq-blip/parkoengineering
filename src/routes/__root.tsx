@@ -72,20 +72,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
+      {
+        name: "description",
+        content:
+          "Parko Engineering Limited delivers world-class commercial, residential and civil infrastructure projects across Ghana with structural excellence and precision engineering.",
+      },
+      { name: "author", content: "Parko Engineering Limited" },
+      { property: "og:title", content: "Parko Engineering Limited" },
+      {
+        property: "og:description",
+        content:
+          "Commercial construction, residential developments, civil infrastructure and project management — delivered on time and on budget.",
+      },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap",
       },
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
