@@ -1,25 +1,29 @@
 import { Link } from "@tanstack/react-router";
-import { Building2, Facebook, Linkedin, Twitter, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { Facebook, Linkedin, Twitter, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import logo from "@/assets/parko-logo.jpeg";
 
 export function SiteFooter() {
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container-wide py-16 grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div>
-          <div className="flex items-center gap-2.5">
-            <span className="grid h-9 w-9 place-items-center bg-accent text-accent-foreground rounded-sm">
-              <Building2 className="h-5 w-5" strokeWidth={2.5} />
+          <div className="flex items-center gap-3">
+            <span className="grid h-11 w-11 place-items-center bg-background rounded-sm p-1">
+              <img src={logo} alt="Parko P. Engineering Ltd." className="h-full w-full object-contain" />
             </span>
-            <span className="font-display font-extrabold tracking-tight text-lg leading-none">
-              PARKO
-              <span className="block text-[10px] font-medium tracking-[0.22em] text-primary-foreground/70 mt-0.5">
-                ENGINEERING LIMITED
+            <span className="font-display font-extrabold tracking-tight text-base leading-none">
+              PARKO P. ENGINEERING
+              <span className="block text-[10px] font-medium tracking-[0.22em] text-primary-foreground/70 mt-1">
+                BUILD SMART · WE BUILD IT
               </span>
             </span>
           </div>
-          <p className="mt-5 text-sm text-primary-foreground/75 leading-relaxed">
+          <p className="mt-5 text-sm text-primary-foreground/75 leading-relaxed italic">
+            "You Dream It. We Build It."
+          </p>
+          <p className="mt-3 text-sm text-primary-foreground/75 leading-relaxed">
             Delivering structural excellence in commercial, residential and civil infrastructure
-            projects for over two decades.
+            projects across Ghana.
           </p>
           <div className="mt-6 flex gap-2">
             {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
