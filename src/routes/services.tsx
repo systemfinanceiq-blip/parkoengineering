@@ -36,7 +36,7 @@ const SERVICES = [
   { icon: HardHat, title: "Construction Site Supervision", desc: "Daily on-site oversight, quality control, and milestone-based reporting." },
   { icon: Pencil, title: "Architectural Drawings", desc: "Concept, working and structural drawings produced in-house by certified architects." },
   { icon: ClipboardList, title: "Project Management", desc: "End-to-end planning, scheduling, cost control and stakeholder coordination." },
-  { icon: Map, title: "Land Surveys", desc: "Topographic, cadastral and engineering surveys executed with modern equipment." },
+  { icon: MapIcon, title: "Land Surveys", desc: "Topographic, cadastral and engineering surveys executed with modern equipment." },
   { icon: Construction, title: "Backhoe Operating", desc: "Certified operators and well-maintained excavator fleet for site preparation." },
   { icon: Truck, title: "Tipper Driving", desc: "Reliable haulage of aggregates, spoil and bulk materials to and from site." },
   { icon: Construction, title: "Crane Operating", desc: "Mobile and tower crane operations executed under strict lift-plan protocols." },
