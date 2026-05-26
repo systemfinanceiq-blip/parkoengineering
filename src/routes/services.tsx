@@ -5,7 +5,7 @@ import {
   HardHat,
   Pencil,
   ClipboardList,
-  Map,
+  Map as MapIcon,
   Truck,
   Construction,
   ArrowRight,
