@@ -120,6 +120,7 @@ function AboutPage() {
               <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{c.body}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
     </SiteLayout>
