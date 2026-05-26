@@ -1,0 +1,108 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { SiteLayout } from "@/components/SiteLayout";
+import { PageHeader } from "@/components/PageHeader";
+import { MapPin } from "lucide-react";
+import projCommercial from "@/assets/project-commercial.jpg";
+import projResidential from "@/assets/project-residential.jpg";
+import projInfra from "@/assets/project-infrastructure.jpg";
+import projIndustrial from "@/assets/project-industrial.jpg";
+
+export const Route = createFileRoute("/portfolio")({
+  head: () => ({
+    meta: [
+      { title: "Portfolio — Parko Engineering Limited" },
+      {
+        name: "description",
+        content: "Selected commercial, residential and infrastructure projects delivered by Parko Engineering.",
+      },
+      { property: "og:title", content: "Portfolio — Parko Engineering" },
+      { property: "og:description", content: "A showcase of completed engineering projects across Ghana." },
+    ],
+  }),
+  component: PortfolioPage,
+});
+
+const PROJECTS = [
+  { name: "Cedi Tower", location: "Accra", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2024" },
+  { name: "Greenfield Estates", location: "Tema", sector: "Residential", img: projResidential, tag: "residential", year: "2023" },
+  { name: "Volta Bridge Expansion", location: "Eastern Region", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2023" },
+  { name: "Northern Logistics Hub", location: "Kumasi", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2022" },
+  { name: "Ridgeview Residences", location: "East Legon", sector: "Residential", img: projResidential, tag: "residential", year: "2022" },
+  { name: "Coastal Highway Phase II", location: "Cape Coast", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2021" },
+  { name: "Harbour Plaza", location: "Takoradi", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2021" },
+  { name: "Akosombo Industrial Park", location: "Akosombo", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2020" },
+];
+
+function PortfolioPage() {
+  const [filter, setFilter] = useState("all");
+  const filters = [
+    { id: "all", label: "All" },
+    { id: "commercial", label: "Commercial" },
+    { id: "residential", label: "Residential" },
+    { id: "infrastructure", label: "Infrastructure" },
+  ];
+  const visible = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
+
+  return (
+    <SiteLayout>
+      <PageHeader
+        eyebrow="PORTFOLIO"
+        title="Projects That\nStand The Test Of Time"
+        subtitle="A selection of completed work across commercial, residential and civil infrastructure."
+      />
+
+      <section className="py-16 md:py-20">
+        <div className="container-wide">
+          <div className="flex flex-wrap gap-2 mb-10">
+            {filters.map((f) => (
+              <button
+                key={f.id}
+                onClick={() => setFilter(f.id)}
+                className={`px-4 py-2 text-xs font-bold tracking-wider rounded-sm border transition-all ${
+                  filter === f.id
+                    ? "bg-primary text-primary-foreground border-primary"
+                    : "bg-card text-foreground border-border hover:border-primary"
+                }`}
+              >
+                {f.label.toUpperCase()}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {visible.map((p) => (
+              <article
+                key={p.name + p.location}
+                className="group relative overflow-hidden rounded-md bg-card border border-border hover:shadow-2xl transition-all"
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    loading="lazy"
+                    width={1200}
+                    height={900}
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute top-3 left-3 bg-accent text-accent-foreground text-[10px] font-bold tracking-[0.18em] px-2.5 py-1 rounded-sm">
+                    {p.sector.toUpperCase()}
+                  </div>
+                  <div className="absolute top-3 right-3 bg-background/90 text-foreground text-[10px] font-bold tracking-wider px-2 py-1 rounded-sm">
+                    {p.year}
+                  </div>
+                </div>
+                <div className="p-5 border-t border-border">
+                  <h3 className="font-display font-bold text-lg uppercase tracking-tight">{p.name}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground flex items-center gap-1.5">
+                    <MapPin className="h-3.5 w-3.5" /> {p.location}
+                  </p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+    </SiteLayout>
+  );
+}
