@@ -1,6 +1,7 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Building2 } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import logo from "@/assets/parko-logo.jpeg";
 
 const NAV = [
   { to: "/", label: "Home" },
@@ -34,14 +35,16 @@ export function SiteHeader() {
       }`}
     >
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
-        <Link to="/" className="flex items-center gap-2.5 group">
-          <span className="grid h-9 w-9 place-items-center bg-primary text-primary-foreground rounded-sm">
-            <Building2 className="h-5 w-5" strokeWidth={2.5} />
-          </span>
-          <span className="font-display font-extrabold tracking-tight text-foreground text-lg leading-none">
-            PARKO
-            <span className="block text-[10px] font-medium tracking-[0.22em] text-muted-foreground mt-0.5">
-              ENGINEERING
+        <Link to="/" className="flex items-center gap-3 group">
+          <img
+            src={logo}
+            alt="Parko P. Engineering Ltd."
+            className="h-10 w-10 md:h-11 md:w-11 object-contain"
+          />
+          <span className="font-display font-extrabold tracking-tight text-foreground text-base md:text-lg leading-none">
+            PARKO P. ENGINEERING
+            <span className="block text-[10px] font-medium tracking-[0.22em] text-muted-foreground mt-1">
+              BUILD SMART · WE BUILD IT
             </span>
           </span>
         </Link>

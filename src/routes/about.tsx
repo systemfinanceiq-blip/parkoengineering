@@ -83,26 +83,34 @@ function AboutPage() {
       </section>
 
       <section className="bg-surface py-20 md:py-24">
-        <div className="container-wide grid md:grid-cols-3 gap-5">
-          {[
-            {
-              icon: Target,
-              title: "Mission",
-              body:
-                "To deliver engineered structures that stand as a benchmark for safety, durability and craftsmanship.",
-            },
-            {
-              icon: Eye,
-              title: "Vision",
-              body:
-                "To be West Africa's most trusted name in vertically-integrated construction and civil engineering.",
-            },
-            {
-              icon: Award,
-              title: "Values",
-              body:
-                "Discipline. Accountability. Precision. Sustainability. Safety above all else, always.",
-            },
+        <div className="container-wide">
+          <p className="accent-line text-xs font-bold tracking-[0.22em] text-primary text-center md:text-left">
+            WHAT DRIVES US
+          </p>
+          <h2 className="mt-3 font-display font-black uppercase text-3xl md:text-4xl text-center md:text-left">
+            Mission · Vision · Values
+          </h2>
+
+          <div className="mt-10 grid md:grid-cols-3 gap-5">
+            {[
+              {
+                icon: Target,
+                title: "Our Mission",
+                body:
+                  "To partner with clients in bringing their construction visions to life through high-quality execution, meticulous attention to detail, and dependable service. We uphold the highest standards of professionalism while fostering a culture of dedication and enthusiasm within our team to ensure every project is delivered on time, to specification, and with lasting value.",
+              },
+              {
+                icon: Eye,
+                title: "Our Vision",
+                body:
+                  "To be the most trusted and preferred partner in the construction industry — recognized for integrity, excellence, and lasting relationships. We are committed to upholding the highest standards of professionalism, ethics, and respect in every interaction with our clients, suppliers, subcontractors, and colleagues, building a reputation that makes us the first choice for every project.",
+              },
+              {
+                icon: Award,
+                title: "Our Values",
+                body:
+                  "Integrity. Discipline. Accountability. Precision. Sustainability. Safety above all else, always — in every interaction, on every site.",
+              },
           ].map((c) => (
             <div key={c.title} className="bg-card border border-border rounded-md p-8 hover:border-accent transition-colors">
               <div className="grid h-12 w-12 place-items-center bg-primary text-primary-foreground rounded-sm">
@@ -112,6 +120,7 @@ function AboutPage() {
               <p className="mt-3 text-muted-foreground text-sm leading-relaxed">{c.body}</p>
             </div>
           ))}
+          </div>
         </div>
       </section>
     </SiteLayout>
