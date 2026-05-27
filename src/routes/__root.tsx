@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Parko Engineering Limited delivers world-class commercial, residential and civil infrastructure projects across Ghana with structural excellence and precision engineering.",
       },
       { name: "author", content: "Parko Engineering Limited" },
-      { property: "og:title", content: "Parko Engineering Limited" },
+      { property: "og:title", content: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
       {
         property: "og:description",
         content:
@@ -87,6 +87,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
+      { name: "description", content: "Your First Choice For Quality Construction" },
+      { property: "og:description", content: "Your First Choice For Quality Construction" },
+      { name: "twitter:description", content: "Your First Choice For Quality Construction" },
+      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/242NMwcbJlVRzCysKdlx3ETZ9HT2/social-images/social-1779867526846-Parko_Logo.webp" },
+      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/242NMwcbJlVRzCysKdlx3ETZ9HT2/social-images/social-1779867526846-Parko_Logo.webp" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
