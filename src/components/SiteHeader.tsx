@@ -57,7 +57,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 className={`relative px-3.5 py-2 text-sm font-semibold transition-colors ${
-                  active ? "text-primary" : "text-foreground/75 hover:text-primary"
+                  active ? "text-accent" : "text-foreground/80 hover:text-accent"
                 }`}
               >
                 {item.label}

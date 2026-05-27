@@ -1,22 +1,23 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
 import {
   ArrowRight,
+  ChevronRight,
+  Home,
   Building2,
-  HardHat,
+  Hammer,
+  ClipboardList,
   Ruler,
-  Truck,
-  ShieldCheck,
+  Paintbrush,
   Award,
+  ShieldCheck,
+  Users,
+  Package,
   Clock,
-  CheckCircle2,
-  Phone,
-  Mail,
-  MapPin,
-  Upload,
+  Quote,
 } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroImg from "@/assets/hero-construction.jpg";
+import engineerImg from "@/assets/about-engineer.jpg";
 import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
 import projInfra from "@/assets/project-infrastructure.jpg";
@@ -25,208 +26,110 @@ import projIndustrial from "@/assets/project-industrial.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Parko Engineering — Engineering Legacies. Building Reality." },
+      { title: "Parko P. Engineering — Building Strong Foundations for the Future" },
       {
         name: "description",
         content:
-          "Premier construction and engineering firm in Ghana delivering commercial, residential, and infrastructure projects on time and within budget.",
-      },
-      { property: "og:title", content: "Parko Engineering — Engineering Legacies. Building Reality." },
-      {
-        property: "og:description",
-        content:
-          "Over 20 years of structural excellence in commercial, residential, and civil infrastructure development.",
+          "Trusted residential & commercial construction experts delivering quality, safety, and on-time results across Ghana.",
       },
     ],
   }),
   component: HomePage,
 });
 
-const SPECIALIZATIONS = [
-  {
-    icon: Building2,
-    title: "Commercial Construction",
-    desc: "Office complexes, retail centers and mixed-use towers built to last with precision-engineered structural systems.",
-  },
-  {
-    icon: HardHat,
-    title: "Residential Developments",
-    desc: "Modern housing estates and high-end residential builds delivered with craftsmanship and disciplined project control.",
-  },
-  {
-    icon: Ruler,
-    title: "Civil Infrastructure",
-    desc: "Roads, bridges, drainage and earthworks engineered to government and international structural codes.",
-  },
-  {
-    icon: Truck,
-    title: "Project Management",
-    desc: "End-to-end management — from architectural drawings and land surveys to crane operations and final handover.",
-  },
-];
-
-const PROJECTS = [
-  { name: "Cedi Tower", location: "Accra, Ghana", sector: "Commercial", img: projCommercial, tag: "commercial" },
-  { name: "Greenfield Estates", location: "Tema", sector: "Residential", img: projResidential, tag: "residential" },
-  { name: "Volta Bridge Expansion", location: "Eastern Region", sector: "Infrastructure", img: projInfra, tag: "infrastructure" },
-  { name: "Northern Logistics Hub", location: "Kumasi", sector: "Commercial", img: projIndustrial, tag: "commercial" },
-  { name: "Ridgeview Residences", location: "East Legon", sector: "Residential", img: projResidential, tag: "residential" },
-  { name: "Coastal Highway Phase II", location: "Cape Coast", sector: "Infrastructure", img: projInfra, tag: "infrastructure" },
-];
-
-const STATS = [
-  { value: "150+", label: "Projects Completed" },
-  { value: "98%", label: "On-Time Delivery" },
-  { value: "0", label: "Safety Incidents" },
-  { value: "20+", label: "Years of Excellence" },
-];
-
 function HomePage() {
   return (
     <SiteLayout>
       <Hero />
-      <TrustStrip />
-      <Specializations />
-      <Portfolio />
+      <Services />
       <WhyChooseUs />
-      <ContactSection />
+      <Projects />
+      <Testimonials />
+      <CTABanner />
     </SiteLayout>
   );
 }
 
+/* ---------------- HERO ---------------- */
 function Hero() {
   return (
-    <section className="relative overflow-hidden bg-primary text-primary-foreground">
+    <section className="relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Modern construction site at dusk with tower crane"
-          className="h-full w-full object-cover opacity-45"
-          width={1600}
-          height={1200}
+          alt="Construction site at sunset with cranes and crew"
+          className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/70 to-background/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
       </div>
 
-      <div className="container-wide relative grid lg:grid-cols-12 gap-10 py-24 md:py-32 lg:py-40">
-        <div className="lg:col-span-7 reveal">
-          <div className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.22em] text-accent">
-            <span className="h-px w-10 bg-accent" /> PARKO ENGINEERING LIMITED
-          </div>
-          <h1 className="mt-5 font-display font-black uppercase leading-[0.95] text-5xl md:text-6xl lg:text-7xl">
-            Engineering<br />
-            Legacies.<br />
-            <span className="text-accent">Building Reality.</span>
-          </h1>
-          <p className="mt-7 text-lg text-primary-foreground/85 max-w-xl leading-relaxed">
-            Delivering world-class commercial, industrial, and infrastructure development projects
-            on time and within budget.
+      <div className="container-wide relative py-24 md:py-32 lg:py-40">
+        <div className="max-w-2xl">
+          <p className="inline-flex items-center gap-2 text-xs font-bold tracking-[0.22em] text-accent">
+            <span className="h-px w-10 bg-accent" /> PARKO P. ENGINEERING LTD.
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <h1 className="mt-5 font-display font-black text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]">
+            Building Strong<br />
+            Foundations <span className="text-accent">for the Future</span>
+          </h1>
+          <p className="mt-6 text-base md:text-lg text-white/85 max-w-xl leading-relaxed">
+            Trusted residential &amp; commercial construction experts delivering quality, safety,
+            and on-time results.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-bold tracking-wide rounded-sm hover:brightness-95 transition-all shadow-lg"
+              className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3.5 text-sm font-bold tracking-wide rounded-md hover:brightness-95 transition-all shadow-lg"
             >
-              REQUEST A QUOTE <ArrowRight className="h-4 w-4" />
+              Get a Free Quote <ChevronRight className="h-4 w-4" />
             </Link>
             <Link
               to="/portfolio"
-              className="inline-flex items-center gap-2 border border-primary-foreground/40 px-6 py-3.5 text-sm font-bold tracking-wide rounded-sm hover:bg-primary-foreground/10 transition-all"
+              className="inline-flex items-center gap-2 border border-white/40 text-white px-6 py-3.5 text-sm font-bold tracking-wide rounded-md hover:bg-white/10 transition-all"
             >
-              EXPLORE PORTFOLIO
+              View Our Projects
             </Link>
           </div>
         </div>
-
-        <div className="lg:col-span-5 relative lg:mt-8 reveal reveal-delay-2">
-          <div className="relative ml-auto max-w-sm bg-background text-foreground p-7 rounded-md shadow-2xl border-l-4 border-accent">
-            <Award className="h-8 w-8 text-accent" />
-            <p className="mt-4 font-display font-extrabold text-3xl leading-tight">
-              Over <span className="text-primary">20 Years</span> of Structural Excellence
-            </p>
-            <p className="mt-3 text-sm text-muted-foreground">
-              A trusted name in Ghanaian construction, certified and committed to international
-              safety standards.
-            </p>
-            <div className="mt-5 pt-5 border-t border-border grid grid-cols-2 gap-4 text-xs">
-              <div>
-                <p className="font-display font-bold text-2xl text-primary">150+</p>
-                <p className="text-muted-foreground">Projects</p>
-              </div>
-              <div>
-                <p className="font-display font-bold text-2xl text-primary">98%</p>
-                <p className="text-muted-foreground">On-time</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute inset-0 pointer-events-none opacity-20 blueprint-grid" aria-hidden />
-    </section>
-  );
-}
-
-function TrustStrip() {
-  const partners = [
-    "GHANA INSTITUTE OF ENGINEERS",
-    "ABCECG",
-    "ISO 9001:2015",
-    "OSHA COMPLIANT",
-    "MIN. OF WORKS & HOUSING",
-    "PPA REGISTERED",
-  ];
-  return (
-    <section className="border-y border-border bg-surface">
-      <div className="container-wide py-7 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 items-center">
-        {partners.map((p) => (
-          <div
-            key={p}
-            className="text-center text-[11px] font-bold tracking-[0.18em] text-muted-foreground/80"
-          >
-            {p}
-          </div>
-        ))}
       </div>
     </section>
   );
 }
 
-function Specializations() {
+/* ---------------- SERVICES ---------------- */
+const SERVICES = [
+  { icon: Home, title: "Residential Construction", desc: "New home builds & custom." },
+  { icon: Building2, title: "Commercial Buildings", desc: "Office, retail & industrial projects." },
+  { icon: Hammer, title: "Renovation & Remodeling", desc: "Home & commercial renovations." },
+  { icon: ClipboardList, title: "Project Management", desc: "Planning & supervision." },
+  { icon: Ruler, title: "Structural Design", desc: "Engineering & design solutions." },
+  { icon: Paintbrush, title: "Interior Finishing", desc: "Custom interior fit-outs." },
+];
+
+function Services() {
   return (
-    <section id="services" className="py-20 md:py-28">
+    <section id="services" className="py-16 md:py-24 bg-background">
       <div className="container-wide">
-        <div className="max-w-2xl">
-          <p className="accent-line text-xs font-bold tracking-[0.22em] text-primary">
-            WHAT WE DO
-          </p>
-          <h2 className="mt-3 font-display font-black uppercase text-3xl md:text-5xl text-foreground leading-tight">
-            Our Specializations
-          </h2>
-          <p className="mt-4 text-muted-foreground max-w-xl">
-            Four core engineering disciplines, executed by a single accountable team — from blueprint
-            through final inspection.
-          </p>
-        </div>
+        <h2 className="font-display font-extrabold text-white text-3xl md:text-4xl">
+          Our Services
+        </h2>
+        <div className="mt-3 h-px w-full bg-white/10" />
 
-        <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {SPECIALIZATIONS.map((s, i) => (
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {SERVICES.map((s) => (
             <Link
-              to="/services"
               key={s.title}
-              className={`group relative bg-card border border-border rounded-md p-7 hover:border-accent hover:-translate-y-1 hover:shadow-xl transition-all duration-300 reveal reveal-delay-${i + 1}`}
+              to="/services"
+              className="group rounded-lg border border-white/10 bg-card p-6 hover:border-accent hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="grid h-12 w-12 place-items-center bg-primary text-primary-foreground rounded-sm group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                <s.icon className="h-6 w-6" strokeWidth={2} />
-              </div>
-              <h3 className="mt-5 font-display font-bold text-lg uppercase tracking-tight text-foreground">
+              <span className="grid h-11 w-11 place-items-center rounded-md border border-white/15 bg-white/5 text-accent">
+                <s.icon className="h-5 w-5" strokeWidth={2} />
+              </span>
+              <h3 className="mt-5 font-display font-bold text-white text-base leading-tight">
                 {s.title}
               </h3>
-              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              <span className="mt-5 inline-flex items-center gap-1.5 text-xs font-bold tracking-wider text-primary group-hover:text-accent transition-colors">
-                LEARN MORE
-                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
-              </span>
+              <p className="mt-2 text-sm text-white/65">{s.desc}</p>
             </Link>
           ))}
         </div>
@@ -235,289 +138,201 @@ function Specializations() {
   );
 }
 
-function Portfolio() {
-  const [filter, setFilter] = useState<string>("all");
-  const filters = [
-    { id: "all", label: "All" },
-    { id: "commercial", label: "Commercial" },
-    { id: "residential", label: "Residential" },
-    { id: "infrastructure", label: "Infrastructure" },
-  ];
-  const visible = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
-
-  return (
-    <section id="portfolio" className="bg-surface py-20 md:py-28">
-      <div className="container-wide">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-          <div>
-            <p className="accent-line text-xs font-bold tracking-[0.22em] text-primary">PORTFOLIO</p>
-            <h2 className="mt-3 font-display font-black uppercase text-3xl md:text-5xl text-foreground leading-tight">
-              Featured Work
-            </h2>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {filters.map((f) => (
-              <button
-                key={f.id}
-                onClick={() => setFilter(f.id)}
-                className={`px-4 py-2 text-xs font-bold tracking-wider rounded-sm border transition-all ${
-                  filter === f.id
-                    ? "bg-primary text-primary-foreground border-primary"
-                    : "bg-card text-foreground border-border hover:border-primary"
-                }`}
-              >
-                {f.label.toUpperCase()}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {visible.map((p) => (
-            <article
-              key={p.name + p.location}
-              className="group relative overflow-hidden rounded-md bg-card border border-border hover:shadow-2xl transition-all"
-            >
-              <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                <img
-                  src={p.img}
-                  alt={p.name}
-                  loading="lazy"
-                  width={1200}
-                  height={900}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute top-3 left-3 bg-accent text-accent-foreground text-[10px] font-bold tracking-[0.18em] px-2.5 py-1 rounded-sm">
-                  {p.sector.toUpperCase()}
-                </div>
-              </div>
-              <div className="p-5 border-t border-border">
-                <h3 className="font-display font-bold text-lg uppercase tracking-tight text-foreground">
-                  {p.name}
-                </h3>
-                <p className="mt-1 text-sm text-muted-foreground flex items-center gap-1.5">
-                  <MapPin className="h-3.5 w-3.5" /> {p.location}
-                </p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
+/* ---------------- WHY CHOOSE US ---------------- */
+const WHY = [
+  { icon: Award, title: "20+ Years of Experience" },
+  { icon: ShieldCheck, title: "Licensed & Insured" },
+  { icon: Users, title: "Skilled Team of Experts" },
+  { icon: Package, title: "High-Quality Materials" },
+  { icon: Clock, title: "On-Time Delivery" },
+];
 
 function WhyChooseUs() {
   return (
-    <section className="py-20 md:py-28 bg-primary text-primary-foreground relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10 blueprint-grid pointer-events-none" />
-      <div className="container-wide relative grid lg:grid-cols-2 gap-14 items-center">
-        <div>
-          <p className="text-xs font-bold tracking-[0.22em] text-accent">
-            <span className="inline-block h-px w-10 bg-accent align-middle mr-3" />
-            WHY PARKO
-          </p>
-          <h2 className="mt-3 font-display font-black uppercase text-3xl md:text-5xl leading-tight">
-            Rigorous Standards.<br />Precision Engineering.
-          </h2>
-          <p className="mt-5 text-primary-foreground/85 leading-relaxed">
-            Every Parko project begins with rigorous safety planning and sustainable building
-            practices. We combine modern architectural drafting, certified site supervision, and
-            heavy plant operation under one roof — giving clients a single accountable team from
-            land survey to handover.
-          </p>
-          <ul className="mt-7 space-y-3">
-            {[
-              "Certified ISO 9001:2015 quality management",
-              "Zero-incident HSE record across all active sites",
-              "In-house architects, surveyors and heavy plant",
-              "Transparent reporting with milestone-based delivery",
-            ].map((b) => (
-              <li key={b} className="flex items-start gap-3 text-sm">
-                <CheckCircle2 className="h-5 w-5 text-accent shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/90">{b}</span>
+    <section className="py-16 md:py-24" style={{ background: "oklch(0.94 0.008 250)" }}>
+      <div className="container-wide">
+        <h2 className="font-display font-extrabold text-3xl md:text-4xl" style={{ color: "oklch(0.21 0.035 255)" }}>
+          Why Choose Parko Engineering
+        </h2>
+        <div className="mt-3 h-px w-full" style={{ background: "oklch(0.85 0.01 250)" }} />
+
+        <div className="mt-10 grid gap-8 lg:grid-cols-2 items-center">
+          <div className="overflow-hidden rounded-lg">
+            <img
+              src={engineerImg}
+              alt="Lead engineer on site with blueprints"
+              className="w-full aspect-[4/3] object-cover"
+            />
+          </div>
+          <ul className="grid sm:grid-cols-2 gap-3">
+            {WHY.map((w) => (
+              <li
+                key={w.title}
+                className="flex items-center gap-3 rounded-md bg-white px-5 py-4 border shadow-sm"
+                style={{ borderColor: "oklch(0.88 0.01 250)" }}
+              >
+                <span
+                  className="grid h-9 w-9 place-items-center rounded-md shrink-0"
+                  style={{ background: "oklch(0.94 0.06 78 / 0.45)", color: "oklch(0.55 0.15 78)" }}
+                >
+                  <w.icon className="h-5 w-5" />
+                </span>
+                <span className="font-display font-bold text-sm" style={{ color: "oklch(0.21 0.035 255)" }}>
+                  {w.title}
+                </span>
               </li>
             ))}
           </ul>
         </div>
+      </div>
+    </section>
+  );
+}
 
-        <div className="grid grid-cols-2 gap-px bg-primary-foreground/15 rounded-md overflow-hidden">
-          {STATS.map((s) => (
-            <div key={s.label} className="bg-primary p-8 md:p-10 text-center">
-              <p className="font-display font-black text-5xl md:text-6xl text-accent leading-none">
-                {s.value}
-              </p>
-              <p className="mt-3 text-xs font-bold tracking-[0.18em] text-primary-foreground/80 uppercase">
-                {s.label}
-              </p>
-            </div>
+/* ---------------- PROJECTS ---------------- */
+const PROJECTS = [
+  { name: "Modern Family Home", img: projResidential },
+  { name: "Downtown Office Tower", img: projCommercial },
+  { name: "Luxury Apartment Complex", img: projIndustrial },
+  { name: "Retail Center Renovation", img: projInfra },
+];
+
+function Projects() {
+  return (
+    <section className="py-16 md:py-24 bg-surface-strong">
+      <div className="container-wide">
+        <h2 className="font-display font-extrabold text-white text-3xl md:text-4xl">
+          Our Projects
+        </h2>
+        <div className="mt-3 h-px w-full bg-white/10" />
+
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {PROJECTS.map((p) => (
+            <article
+              key={p.name}
+              className="group relative overflow-hidden rounded-lg border border-white/10"
+            >
+              <img
+                src={p.img}
+                alt={p.name}
+                loading="lazy"
+                className="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
+              <h3 className="absolute left-4 bottom-4 right-4 font-display font-bold text-white text-base leading-tight">
+                {p.name}
+              </h3>
+            </article>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
 
-function ContactSection() {
-  return (
-    <section id="contact" className="py-20 md:py-28">
-      <div className="container-wide">
-        <div className="max-w-2xl">
-          <p className="accent-line text-xs font-bold tracking-[0.22em] text-primary">
-            START YOUR PROJECT
-          </p>
-          <h2 className="mt-3 font-display font-black uppercase text-3xl md:text-5xl text-foreground leading-tight">
-            Project Inquiries
-          </h2>
-        </div>
-
-        <div className="mt-12 grid lg:grid-cols-5 gap-8">
-          <div className="lg:col-span-2 space-y-6">
-            <ContactInfo />
-            <div className="aspect-[4/3] rounded-md overflow-hidden border border-border bg-muted relative">
-              <iframe
-                title="Parko headquarters map"
-                className="absolute inset-0 h-full w-full"
-                src="https://www.openstreetmap.org/export/embed.html?bbox=-0.25%2C5.55%2C-0.15%2C5.65&layer=mapnik"
-                loading="lazy"
-              />
-            </div>
-          </div>
-
-          <form
-            className="lg:col-span-3 bg-card border border-border rounded-md p-7 md:p-10 shadow-lg space-y-5"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thank you — your inquiry has been received. Our team will be in touch within 24 hours.");
-            }}
+        <div className="mt-10 flex justify-center">
+          <Link
+            to="/portfolio"
+            className="inline-flex items-center gap-2 rounded-md border border-white/30 text-white px-6 py-3 text-sm font-bold hover:bg-white/10 transition-all"
           >
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Field label="Full Name" name="name" placeholder="John Doe" required />
-              <Field label="Company Name" name="company" placeholder="Your company" />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-5">
-              <Field label="Email" name="email" type="email" placeholder="you@company.com" required />
-              <Field label="Phone" name="phone" type="tel" placeholder="+233 ..." />
-            </div>
-            <div className="grid sm:grid-cols-2 gap-5">
-              <div>
-                <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
-                  PROJECT TYPE
-                </label>
-                <select
-                  name="type"
-                  className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-                >
-                  <option>Commercial</option>
-                  <option>Residential</option>
-                  <option>Infrastructure</option>
-                  <option>Other</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
-                  ESTIMATED BUDGET
-                </label>
-                <select
-                  name="budget"
-                  className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-                >
-                  <option>Under $100K</option>
-                  <option>$100K – $500K</option>
-                  <option>$500K – $2M</option>
-                  <option>$2M+</option>
-                </select>
-              </div>
-            </div>
-            <div>
-              <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
-                PROJECT BRIEF
-              </label>
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Tell us about scope, location, and timeline..."
-                className="w-full px-3 py-2.5 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-              />
-            </div>
-            <div>
-              <label className="flex items-center justify-center gap-2 h-11 border border-dashed border-input rounded-sm text-sm text-muted-foreground hover:border-accent cursor-pointer transition-colors">
-                <Upload className="h-4 w-4" />
-                Upload blueprint or project brief (optional)
-                <input type="file" className="hidden" />
-              </label>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-accent text-accent-foreground font-bold tracking-wide py-3.5 rounded-sm hover:brightness-95 transition-all"
-            >
-              SUBMIT INQUIRY
-            </button>
-          </form>
+            View All Projects <ChevronRight className="h-4 w-4" />
+          </Link>
         </div>
       </div>
     </section>
   );
 }
 
-export function ContactInfo() {
-  const rows = [
-    { icon: Phone, label: "PHONE", value: "0247 253 905 / 0572 011 270" },
-    { icon: Mail, label: "EMAIL", value: "info@parkoengineering.com" },
-    { icon: MapPin, label: "HEADQUARTERS", value: "Accra, Ghana" },
-    { icon: Clock, label: "OPERATING HOURS", value: "Mon – Sat · 7:00 AM – 6:00 PM" },
-    { icon: ShieldCheck, label: "REGISTRATION", value: "Licensed contractor · Ghana" },
-  ];
+/* ---------------- TESTIMONIALS ---------------- */
+const TESTIMONIALS = [
+  {
+    name: "Sarah L.",
+    role: "Custom Home Build",
+    quote: "Parko Engineering exceeded our expectations. Fantastic work!",
+  },
+  {
+    name: "James R.",
+    role: "Office Renovation",
+    quote: "Highly professional and always on schedule.",
+  },
+  {
+    name: "Linda M.",
+    role: "Apartment Complex",
+    quote: "Top-notch quality and great communication.",
+  },
+];
+
+function Testimonials() {
   return (
-    <div className="bg-primary text-primary-foreground rounded-md p-7 md:p-8">
-      <h3 className="font-display font-bold text-xl uppercase">Get In Touch</h3>
-      <p className="mt-2 text-sm text-primary-foreground/75">
-        Speak directly with our project consultants.
-      </p>
-      <ul className="mt-6 space-y-5">
-        {rows.map((r) => (
-          <li key={r.label} className="flex gap-4">
-            <span className="grid h-10 w-10 place-items-center bg-accent text-accent-foreground rounded-sm shrink-0">
-              <r.icon className="h-5 w-5" />
-            </span>
-            <div>
-              <p className="text-[10px] font-bold tracking-[0.22em] text-accent">{r.label}</p>
-              <p className="mt-1 text-sm text-primary-foreground/90">{r.value}</p>
-            </div>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <section className="relative py-16 md:py-24 overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={projCommercial} alt="" className="h-full w-full object-cover opacity-25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+      </div>
+
+      <div className="container-wide relative">
+        <h2 className="font-display font-extrabold text-white text-3xl md:text-4xl">
+          Client Testimonials
+        </h2>
+        <div className="mt-3 h-px w-full bg-white/10" />
+
+        <div className="mt-10 grid gap-5 md:grid-cols-3 max-w-4xl">
+          {TESTIMONIALS.map((t) => (
+            <figure
+              key={t.name}
+              className="rounded-lg border border-white/10 bg-card p-6 relative"
+            >
+              <Quote className="absolute top-4 right-4 h-6 w-6 text-accent/40" />
+              <figcaption className="flex items-center gap-3">
+                <span className="grid h-11 w-11 place-items-center rounded-full bg-accent text-accent-foreground font-display font-bold">
+                  {t.name.charAt(0)}
+                </span>
+                <span>
+                  <p className="font-display font-bold text-white text-sm">{t.name}</p>
+                  <p className="text-[11px] tracking-wider text-accent uppercase">{t.role}</p>
+                  <span className="block mt-1 h-0.5 w-8 bg-accent" />
+                </span>
+              </figcaption>
+              <blockquote className="mt-4 text-sm text-white/80 italic leading-relaxed">
+                "{t.quote}"
+              </blockquote>
+            </figure>
+          ))}
+        </div>
+
+        <div className="mt-10 flex">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-3 text-sm font-bold rounded-md hover:brightness-95 transition-all shadow-lg"
+          >
+            Request a Free Quote <ChevronRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
 
-function Field({
-  label,
-  name,
-  type = "text",
-  placeholder,
-  required,
-}: {
-  label: string;
-  name: string;
-  type?: string;
-  placeholder?: string;
-  required?: boolean;
-}) {
+/* ---------------- CTA BANNER ---------------- */
+function CTABanner() {
   return (
-    <div>
-      <label htmlFor={name} className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
-        {label.toUpperCase()}
-        {required && <span className="text-accent ml-1">*</span>}
-      </label>
-      <input
-        id={name}
-        name={name}
-        type={type}
-        required={required}
-        placeholder={placeholder}
-        className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-      />
-    </div>
+    <section className="relative overflow-hidden">
+      <div className="absolute inset-0">
+        <img src={projIndustrial} alt="" className="h-full w-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/85 to-background/60" />
+      </div>
+      <div className="container-wide relative py-16 md:py-20 text-center">
+        <h2 className="font-display font-extrabold text-white text-3xl md:text-4xl">
+          Planning a Construction Project?
+        </h2>
+        <p className="mt-3 text-white/80">
+          Let Parko Engineering bring your vision to life.
+        </p>
+        <div className="mt-7 flex justify-center">
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 bg-accent text-accent-foreground px-7 py-3.5 text-sm font-bold rounded-md hover:brightness-95 transition-all shadow-lg"
+          >
+            Request a Free Quote <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+      </div>
+    </section>
   );
 }
