@@ -117,7 +117,7 @@ function ContactPage() {
               type="submit"
               className="w-full bg-accent text-accent-foreground font-bold tracking-wide py-3.5 rounded-sm hover:brightness-95 transition-all"
             >
-              SUBMIT INQUIRY
+              SEND INQUIRY VIA WHATSAPP
             </button>
           </form>
         </div>
