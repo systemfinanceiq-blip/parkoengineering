@@ -127,6 +127,16 @@ function ContactPage() {
             >
               SEND INQUIRY VIA WHATSAPP
             </button>
+            <a
+              ref={waLinkRef}
+              href="https://wa.me/233247253905"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sr-only"
+              aria-hidden="true"
+            >
+              WhatsApp
+            </a>
           </form>
         </div>
       </section>
