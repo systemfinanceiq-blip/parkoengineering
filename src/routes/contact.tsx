@@ -46,7 +46,23 @@ function ContactPage() {
             className="lg:col-span-3 bg-card border border-border rounded-md p-7 md:p-10 shadow-lg space-y-5"
             onSubmit={(e) => {
               e.preventDefault();
-              alert("Thank you — your inquiry has been received. Our team will be in touch within 24 hours.");
+              const fd = new FormData(e.currentTarget);
+              const get = (k: string) => (fd.get(k) ?? "").toString().trim();
+              const lines = [
+                "*New Project Inquiry — Parko Engineering*",
+                "",
+                `*Name:* ${get("name") || "—"}`,
+                `*Company:* ${get("company") || "—"}`,
+                `*Email:* ${get("email") || "—"}`,
+                `*Phone:* ${get("phone") || "—"}`,
+                `*Project Type:* ${get("projectType") || "—"}`,
+                `*Estimated Budget:* ${get("budget") || "—"}`,
+                "",
+                "*Project Brief:*",
+                get("brief") || "—",
+              ];
+              const text = encodeURIComponent(lines.join("\n"));
+              window.open(`https://wa.me/233247253905?text=${text}`, "_blank", "noopener,noreferrer");
             }}
           >
             <div className="grid sm:grid-cols-2 gap-5">
