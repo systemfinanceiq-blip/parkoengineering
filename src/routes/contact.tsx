@@ -46,7 +46,23 @@ function ContactPage() {
             className="lg:col-span-3 bg-card border border-border rounded-md p-7 md:p-10 shadow-lg space-y-5"
             onSubmit={(e) => {
               e.preventDefault();
-              alert("Thank you — your inquiry has been received. Our team will be in touch within 24 hours.");
+              const fd = new FormData(e.currentTarget);
+              const get = (k: string) => (fd.get(k) ?? "").toString().trim();
+              const lines = [
+                "*New Project Inquiry — Parko Engineering*",
+                "",
+                `*Name:* ${get("name") || "—"}`,
+                `*Company:* ${get("company") || "—"}`,
+                `*Email:* ${get("email") || "—"}`,
+                `*Phone:* ${get("phone") || "—"}`,
+                `*Project Type:* ${get("projectType") || "—"}`,
+                `*Estimated Budget:* ${get("budget") || "—"}`,
+                "",
+                "*Project Brief:*",
+                get("brief") || "—",
+              ];
+              const text = encodeURIComponent(lines.join("\n"));
+              window.open(`https://wa.me/233247253905?text=${text}`, "_blank", "noopener,noreferrer");
             }}
           >
             <div className="grid sm:grid-cols-2 gap-5">
@@ -62,7 +78,7 @@ function ContactPage() {
                 <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   PROJECT TYPE
                 </label>
-                <select className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
+                <select name="projectType" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
                   <option>Commercial</option>
                   <option>Residential</option>
                   <option>Infrastructure</option>
@@ -73,7 +89,7 @@ function ContactPage() {
                 <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   ESTIMATED BUDGET
                 </label>
-                <select className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
+                <select name="budget" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
                   <option>Under $100K</option>
                   <option>$100K – $500K</option>
                   <option>$500K – $2M</option>
@@ -86,6 +102,7 @@ function ContactPage() {
                 PROJECT BRIEF
               </label>
               <textarea
+                name="brief"
                 rows={5}
                 placeholder="Tell us about scope, location, and timeline..."
                 className="w-full px-3 py-2.5 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
@@ -100,7 +117,7 @@ function ContactPage() {
               type="submit"
               className="w-full bg-accent text-accent-foreground font-bold tracking-wide py-3.5 rounded-sm hover:brightness-95 transition-all"
             >
-              SUBMIT INQUIRY
+              SEND INQUIRY VIA WHATSAPP
             </button>
           </form>
         </div>
