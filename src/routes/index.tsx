@@ -172,9 +172,9 @@ function WhyChooseUs() {
                 style={{ borderColor: "oklch(0.88 0.01 250)" }}
               >
                 <span
-                  className="grid h-9 w-9 place-items-center rounded-md shrink-0"
-                  style={{ background: "oklch(0.94 0.06 78 / 0.45)", color: "oklch(0.55 0.15 78)" }}
+                  className="grid h-9 w-9 place-items-center rounded-md shrink-0 bg-accent/15 text-accent"
                 >
+
                   <w.icon className="h-5 w-5" />
                 </span>
                 <span className="font-display font-bold text-sm" style={{ color: "oklch(0.21 0.035 255)" }}>
