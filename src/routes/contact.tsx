@@ -78,7 +78,7 @@ function ContactPage() {
                 <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   PROJECT TYPE
                 </label>
-                <select className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
+                <select name="projectType" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
                   <option>Commercial</option>
                   <option>Residential</option>
                   <option>Infrastructure</option>
@@ -89,7 +89,7 @@ function ContactPage() {
                 <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   ESTIMATED BUDGET
                 </label>
-                <select className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
+                <select name="budget" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
                   <option>Under $100K</option>
                   <option>$100K – $500K</option>
                   <option>$500K – $2M</option>
@@ -102,6 +102,7 @@ function ContactPage() {
                 PROJECT BRIEF
               </label>
               <textarea
+                name="brief"
                 rows={5}
                 placeholder="Tell us about scope, location, and timeline..."
                 className="w-full px-3 py-2.5 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
