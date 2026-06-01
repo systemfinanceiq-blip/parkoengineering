@@ -1,3 +1,4 @@
+import { useRef } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
@@ -20,6 +21,8 @@ export const Route = createFileRoute("/contact")({
 });
 
 function ContactPage() {
+  const waLinkRef = useRef<HTMLAnchorElement>(null);
+
   return (
     <SiteLayout>
       <PageHeader
@@ -62,7 +65,12 @@ function ContactPage() {
                 get("brief") || "—",
               ];
               const text = encodeURIComponent(lines.join("\n"));
-              window.open(`https://wa.me/233247253905?text=${text}`, "_blank", "noopener,noreferrer");
+              const href = `https://wa.me/233247253905?text=${text}`;
+              const link = waLinkRef.current;
+              if (link) {
+                link.href = href;
+                link.click();
+              }
             }}
           >
             <div className="grid sm:grid-cols-2 gap-5">
@@ -119,6 +127,16 @@ function ContactPage() {
             >
               SEND INQUIRY VIA WHATSAPP
             </button>
+            <a
+              ref={waLinkRef}
+              href="https://wa.me/233247253905"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="sr-only"
+              aria-hidden="true"
+            >
+              WhatsApp
+            </a>
           </form>
         </div>
       </section>
