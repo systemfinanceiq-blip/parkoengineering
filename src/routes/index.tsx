@@ -159,7 +159,7 @@ function WhyChooseUs() {
         <div className="mt-10 grid gap-8 lg:grid-cols-2 items-center">
           <div className="overflow-hidden rounded-lg">
             <img
-              src={engineerImg}
+              src={engineerAsset.url}
               alt="Lead engineer on site with blueprints"
               className="w-full aspect-[4/3] object-cover"
             />
