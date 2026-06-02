@@ -140,7 +140,7 @@ function Services() {
 
 /* ---------------- WHY CHOOSE US ---------------- */
 const WHY = [
-  { icon: Award, title: "20+ Years of Experience" },
+  { icon: Award, title: "5+ Years of Experience" },
   { icon: ShieldCheck, title: "Licensed & Insured" },
   { icon: Users, title: "Skilled Team of Experts" },
   { icon: Package, title: "High-Quality Materials" },
