@@ -158,10 +158,12 @@ function Field({
       <label htmlFor={name} className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
         {label.toUpperCase()}{required && <span className="text-accent ml-1">*</span>}
       </label>
-      <input
-        id={name} name={name} type={type} required={required} placeholder={placeholder}
-        className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-      />
+      <div className="geo-field rounded-sm">
+        <input
+          id={name} name={name} type={type} required={required} placeholder={placeholder}
+          className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none"
+        />
+      </div>
     </div>
   );
 }
