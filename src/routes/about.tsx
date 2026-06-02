@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { CheckCircle2, Award, Target, Eye } from "lucide-react";
-import aboutImg from "@/assets/about-engineer.jpg";
+import aboutAsset from "@/assets/parko-site-1.jpeg.asset.json";
 import { PageHeader } from "@/components/PageHeader";
 
 export const Route = createFileRoute("/about")({
