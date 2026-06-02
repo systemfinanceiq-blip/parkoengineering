@@ -56,14 +56,12 @@ export function SiteHeader() {
               <Link
                 key={item.to}
                 to={item.to}
-                className={`relative px-3.5 py-2 text-sm font-semibold transition-colors ${
-                  active ? "text-accent" : "text-foreground/80 hover:text-accent"
+                data-active={active}
+                className={`nav-underline px-3.5 py-2 text-sm font-semibold transition-colors ${
+                  active ? "text-accent" : "text-foreground/80 hover:text-foreground"
                 }`}
               >
                 {item.label}
-                {active && (
-                  <span className="absolute inset-x-3.5 -bottom-0.5 h-0.5 bg-accent" />
-                )}
               </Link>
             );
           })}
