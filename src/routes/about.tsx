@@ -11,7 +11,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Learn about Parko Engineering Limited — a Ghanaian construction and engineering firm with over 20 years of structural excellence.",
+          "Learn about Parko Engineering Limited — a Ghanaian construction and engineering firm delivering structural excellence.",
       },
       { property: "og:title", content: "About Us — Parko Engineering" },
       {
