@@ -14,12 +14,12 @@ export function SiteFooter() {
             <span className="font-display font-extrabold tracking-tight text-base leading-none">
               PARKO P. ENGINEERING
               <span className="block text-[10px] font-medium tracking-[0.22em] text-primary-foreground/70 mt-1">
-                BUILD SMART · WE BUILD IT
+                BUILD SMART · YOU DREAM IT · WE BUILD IT
               </span>
             </span>
           </div>
           <p className="mt-5 text-sm text-primary-foreground/75 leading-relaxed italic">
-            "You Dream It. We Build It."
+            "Build smart. You Dream It. We Build It."
           </p>
           <p className="mt-3 text-sm text-primary-foreground/75 leading-relaxed">
             Delivering structural excellence in commercial, residential and civil infrastructure
