@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroImg from "@/assets/hero-construction.jpg";
-import engineerImg from "@/assets/about-engineer.jpg";
+import engineerAsset from "@/assets/parko-site-2.jpeg.asset.json";
 import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
 import projInfra from "@/assets/project-infrastructure.jpg";
