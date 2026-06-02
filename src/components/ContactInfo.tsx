@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock, ShieldCheck } from "lucide-react";
 export function ContactInfo() {
   const rows = [
     { icon: Phone, label: "PHONE", value: "0247 253 905 / 0572 011 270" },
-    { icon: Mail, label: "EMAIL", value: "info@parkoengineering.com" },
+    { icon: Mail, label: "EMAIL", value: "parkopengineering@gmail.com" },
     { icon: MapPin, label: "HEADQUARTERS", value: "Accra, Ghana" },
     { icon: Clock, label: "OPERATING HOURS", value: "Mon – Sat · 7:00 AM – 6:00 PM" },
     { icon: ShieldCheck, label: "REGISTRATION", value: "Licensed contractor · Ghana" },

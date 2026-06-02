@@ -17,7 +17,7 @@ import {
 } from "lucide-react";
 import { SiteLayout } from "@/components/SiteLayout";
 import heroImg from "@/assets/hero-construction.jpg";
-import engineerImg from "@/assets/about-engineer.jpg";
+import engineerAsset from "@/assets/parko-site-2.jpeg.asset.json";
 import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
 import projInfra from "@/assets/project-infrastructure.jpg";
@@ -140,7 +140,7 @@ function Services() {
 
 /* ---------------- WHY CHOOSE US ---------------- */
 const WHY = [
-  { icon: Award, title: "20+ Years of Experience" },
+  { icon: Award, title: "5+ Years of Experience" },
   { icon: ShieldCheck, title: "Licensed & Insured" },
   { icon: Users, title: "Skilled Team of Experts" },
   { icon: Package, title: "High-Quality Materials" },
@@ -159,7 +159,7 @@ function WhyChooseUs() {
         <div className="mt-10 grid gap-8 lg:grid-cols-2 items-center">
           <div className="overflow-hidden rounded-lg">
             <img
-              src={engineerImg}
+              src={engineerAsset.url}
               alt="Lead engineer on site with blueprints"
               className="w-full aspect-[4/3] object-cover"
             />

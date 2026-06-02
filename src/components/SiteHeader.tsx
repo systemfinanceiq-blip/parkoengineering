@@ -44,7 +44,7 @@ export function SiteHeader() {
           <span className="font-display font-extrabold tracking-tight text-foreground text-base md:text-lg leading-none">
             PARKO P. ENGINEERING
             <span className="block text-[10px] font-medium tracking-[0.22em] text-muted-foreground mt-1">
-              BUILD SMART · WE BUILD IT
+              BUILD SMART · YOU DREAM IT · WE BUILD IT
             </span>
           </span>
         </Link>

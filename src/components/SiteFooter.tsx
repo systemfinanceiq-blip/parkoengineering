@@ -14,12 +14,12 @@ export function SiteFooter() {
             <span className="font-display font-extrabold tracking-tight text-base leading-none">
               PARKO P. ENGINEERING
               <span className="block text-[10px] font-medium tracking-[0.22em] text-primary-foreground/70 mt-1">
-                BUILD SMART · WE BUILD IT
+                BUILD SMART · YOU DREAM IT · WE BUILD IT
               </span>
             </span>
           </div>
           <p className="mt-5 text-sm text-primary-foreground/75 leading-relaxed italic">
-            "You Dream It. We Build It."
+            "Build smart. You Dream It. We Build It."
           </p>
           <p className="mt-3 text-sm text-primary-foreground/75 leading-relaxed">
             Delivering structural excellence in commercial, residential and civil infrastructure
@@ -78,8 +78,8 @@ export function SiteFooter() {
             </li>
             <li className="flex gap-3">
               <Mail className="h-4 w-4 mt-0.5 text-accent shrink-0" />
-              <a href="mailto:info@parkoengineering.com" className="text-primary-foreground/85 hover:text-accent">
-                info@parkoengineering.com
+              <a href="mailto:parkopengineering@gmail.com" className="text-primary-foreground/85 hover:text-accent">
+                parkopengineering@gmail.com
               </a>
             </li>
             <li className="flex gap-3">
