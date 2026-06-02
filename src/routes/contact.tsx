@@ -86,35 +86,41 @@ function ContactPage() {
                 <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   PROJECT TYPE
                 </label>
-                <select name="projectType" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
-                  <option>Commercial</option>
-                  <option>Residential</option>
-                  <option>Infrastructure</option>
-                  <option>Other</option>
-                </select>
+                <div className="geo-field rounded-sm">
+                  <select name="projectType" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none">
+                    <option>Commercial</option>
+                    <option>Residential</option>
+                    <option>Infrastructure</option>
+                    <option>Other</option>
+                  </select>
+                </div>
               </div>
               <div>
                 <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   ESTIMATED BUDGET
                 </label>
-                <select name="budget" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30">
-                  <option>Under $100K</option>
-                  <option>$100K – $500K</option>
-                  <option>$500K – $2M</option>
-                  <option>$2M+</option>
-                </select>
+                <div className="geo-field rounded-sm">
+                  <select name="budget" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none">
+                    <option>Under $100K</option>
+                    <option>$100K – $500K</option>
+                    <option>$500K – $2M</option>
+                    <option>$2M+</option>
+                  </select>
+                </div>
               </div>
             </div>
             <div>
               <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                 PROJECT BRIEF
               </label>
-              <textarea
-                name="brief"
-                rows={5}
-                placeholder="Tell us about scope, location, and timeline..."
-                className="w-full px-3 py-2.5 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-              />
+              <div className="geo-field rounded-sm">
+                <textarea
+                  name="brief"
+                  rows={5}
+                  placeholder="Tell us about scope, location, and timeline..."
+                  className="w-full px-3 py-2.5 bg-background border border-input rounded-sm text-sm focus:outline-none"
+                />
+              </div>
             </div>
             <label className="flex items-center justify-center gap-2 h-11 border border-dashed border-input rounded-sm text-sm text-muted-foreground hover:border-accent cursor-pointer transition-colors">
               <Upload className="h-4 w-4" />
@@ -152,10 +158,12 @@ function Field({
       <label htmlFor={name} className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
         {label.toUpperCase()}{required && <span className="text-accent ml-1">*</span>}
       </label>
-      <input
-        id={name} name={name} type={type} required={required} placeholder={placeholder}
-        className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/30"
-      />
+      <div className="geo-field rounded-sm">
+        <input
+          id={name} name={name} type={type} required={required} placeholder={placeholder}
+          className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none"
+        />
+      </div>
     </div>
   );
 }
