@@ -97,7 +97,7 @@ function TeamPage() {
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {m.bio}
                   </p>
-                  {(m.email || m.linkedin) && (
+                  {(m.email || m.linkedin || m.phone) && (
                     <div className="mt-4 flex gap-2">
                       {m.email && (
                         <a
@@ -106,6 +106,15 @@ function TeamPage() {
                           className="grid h-9 w-9 place-items-center rounded-sm border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
                         >
                           <Mail className="h-4 w-4" />
+                        </a>
+                      )}
+                      {m.phone && (
+                        <a
+                          href={`tel:${m.phone}`}
+                          aria-label={`Call ${m.name}`}
+                          className="grid h-9 w-9 place-items-center rounded-sm border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+                        >
+                          <Phone className="h-4 w-4" />
                         </a>
                       )}
                       {m.linkedin && (
