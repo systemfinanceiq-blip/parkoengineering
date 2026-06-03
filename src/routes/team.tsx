@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
+import asiedu from "@/assets/asiedu-ankomah-samuel.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
