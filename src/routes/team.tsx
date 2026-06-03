@@ -34,22 +34,14 @@ type Member = {
   linkedin?: string;
 };
 
-// To add staff: drop a photo into src/assets/ and reference it here, or pass a URL.
 const TEAM: Member[] = [
   {
-    name: "Add Team Member",
-    role: "Position / Title",
-    bio: "Short biography. Replace this placeholder with the staff member's experience, specialization and notable projects.",
-  },
-  {
-    name: "Add Team Member",
-    role: "Position / Title",
-    bio: "Short biography. Replace this placeholder with the staff member's experience, specialization and notable projects.",
-  },
-  {
-    name: "Add Team Member",
-    role: "Position / Title",
-    bio: "Short biography. Replace this placeholder with the staff member's experience, specialization and notable projects.",
+    name: "Asiedu Ankomah Samuel",
+    role: "Site Supervisor",
+    bio: "Site Supervisor at Parko P. Engineering Ltd., overseeing day-to-day construction operations, quality control and on-site coordination across active project sites in Accra.",
+    photo: asiedu.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233593992430",
   },
 ];
 
