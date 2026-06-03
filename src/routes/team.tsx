@@ -28,7 +28,6 @@ type Member = {
   role: string;
   bio: string;
   photo?: string;
-  photo?: string;
   email?: string;
   phone?: string;
   linkedin?: string;
