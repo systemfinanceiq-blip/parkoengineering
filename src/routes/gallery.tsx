@@ -3,12 +3,22 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { Play, X } from "lucide-react";
-import projCommercial from "@/assets/project-commercial.jpg";
-import projResidential from "@/assets/project-residential.jpg";
-import projInfra from "@/assets/project-infrastructure.jpg";
-import projIndustrial from "@/assets/project-industrial.jpg";
 import site1 from "@/assets/parko-site-1.jpeg.asset.json";
 import site2 from "@/assets/parko-site-2.jpeg.asset.json";
+import team1 from "@/assets/team-site-1.jpeg.asset.json";
+import team2 from "@/assets/team-site-2.jpeg.asset.json";
+import clip1 from "@/assets/site-clip-1.mp4.asset.json";
+import clip2 from "@/assets/site-clip-2.mp4.asset.json";
+import clip3 from "@/assets/site-clip-3.mp4.asset.json";
+import clip4 from "@/assets/site-clip-4.mp4.asset.json";
+import clip5 from "@/assets/site-clip-5.mp4.asset.json";
+import clip6 from "@/assets/site-clip-6.mp4.asset.json";
+import poster1 from "@/assets/poster-1.jpg.asset.json";
+import poster2 from "@/assets/poster-2.jpg.asset.json";
+import poster3 from "@/assets/poster-3.jpg.asset.json";
+import poster4 from "@/assets/poster-4.jpg.asset.json";
+import poster5 from "@/assets/poster-5.jpg.asset.json";
+import poster6 from "@/assets/poster-6.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -33,15 +43,17 @@ type Item =
   | { type: "image"; src: string; caption: string }
   | { type: "video"; src: string; poster: string; caption: string };
 
-// To add new media: drop images into src/assets/ (or upload via chat) and add
-// an entry below. For videos, use an mp4/webm URL or an uploaded asset.
 const ITEMS: Item[] = [
+  { type: "image", src: team1.url, caption: "Site team — project handover" },
+  { type: "image", src: team2.url, caption: "Parko crew on-site" },
+  { type: "video", src: clip1.url, poster: poster1.url, caption: "On-site progress clip" },
+  { type: "video", src: clip2.url, poster: poster2.url, caption: "Construction walkthrough" },
+  { type: "video", src: clip3.url, poster: poster3.url, caption: "Site activity" },
+  { type: "video", src: clip4.url, poster: poster4.url, caption: "Build progress update" },
+  { type: "video", src: clip5.url, poster: poster5.url, caption: "Structural works in motion" },
+  { type: "video", src: clip6.url, poster: poster6.url, caption: "Site supervision" },
   { type: "image", src: site1.url, caption: "Site supervision in progress" },
   { type: "image", src: site2.url, caption: "Structural works on-site" },
-  { type: "image", src: projCommercial, caption: "Commercial build — Accra" },
-  { type: "image", src: projResidential, caption: "Residential development" },
-  { type: "image", src: projInfra, caption: "Civil infrastructure works" },
-  { type: "image", src: projIndustrial, caption: "Industrial project handover" },
 ];
 
 function GalleryPage() {
