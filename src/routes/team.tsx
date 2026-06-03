@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
-import { Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail, Phone } from "lucide-react";
+import asiedu from "@/assets/asiedu-ankomah-samuel.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -27,26 +28,20 @@ type Member = {
   role: string;
   bio: string;
   photo?: string;
+  photo?: string;
   email?: string;
+  phone?: string;
   linkedin?: string;
 };
 
-// To add staff: drop a photo into src/assets/ and reference it here, or pass a URL.
 const TEAM: Member[] = [
   {
-    name: "Add Team Member",
-    role: "Position / Title",
-    bio: "Short biography. Replace this placeholder with the staff member's experience, specialization and notable projects.",
-  },
-  {
-    name: "Add Team Member",
-    role: "Position / Title",
-    bio: "Short biography. Replace this placeholder with the staff member's experience, specialization and notable projects.",
-  },
-  {
-    name: "Add Team Member",
-    role: "Position / Title",
-    bio: "Short biography. Replace this placeholder with the staff member's experience, specialization and notable projects.",
+    name: "Asiedu Ankomah Samuel",
+    role: "Site Supervisor",
+    bio: "Site Supervisor at Parko P. Engineering Ltd., overseeing day-to-day construction operations, quality control and on-site coordination across active project sites in Accra.",
+    photo: asiedu.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233593992430",
   },
 ];
 
@@ -102,7 +97,7 @@ function TeamPage() {
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {m.bio}
                   </p>
-                  {(m.email || m.linkedin) && (
+                  {(m.email || m.linkedin || m.phone) && (
                     <div className="mt-4 flex gap-2">
                       {m.email && (
                         <a
@@ -111,6 +106,15 @@ function TeamPage() {
                           className="grid h-9 w-9 place-items-center rounded-sm border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
                         >
                           <Mail className="h-4 w-4" />
+                        </a>
+                      )}
+                      {m.phone && (
+                        <a
+                          href={`tel:${m.phone}`}
+                          aria-label={`Call ${m.name}`}
+                          className="grid h-9 w-9 place-items-center rounded-sm border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
+                        >
+                          <Phone className="h-4 w-4" />
                         </a>
                       )}
                       {m.linkedin && (
