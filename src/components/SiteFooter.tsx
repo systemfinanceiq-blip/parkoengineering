@@ -46,7 +46,8 @@ export function SiteFooter() {
               { to: "/about", label: "About Us" },
               { to: "/services", label: "Services" },
               { to: "/portfolio", label: "Portfolio" },
-              
+              { to: "/gallery", label: "Gallery" },
+              { to: "/team", label: "Team" },
               { to: "/contact", label: "Contact" },
             ].map((l) => (
               <li key={l.to}>
