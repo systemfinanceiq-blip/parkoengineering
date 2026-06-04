@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { Linkedin, Mail, Phone } from "lucide-react";
 import asiedu from "@/assets/asiedu-ankomah-samuel.jpeg.asset.json";
+import aliKofi from "@/assets/ali-kofi.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
