@@ -134,9 +134,6 @@ function TeamPage() {
             ))}
           </div>
 
-          <p className="mt-10 text-sm text-muted-foreground text-center">
-            Want to be featured here? Share staff photos and bios and we'll add them to the team page.
-          </p>
         </div>
       </section>
     </SiteLayout>
