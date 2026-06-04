@@ -3,6 +3,7 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { Linkedin, Mail, Phone } from "lucide-react";
 import asiedu from "@/assets/asiedu-ankomah-samuel.jpeg.asset.json";
+import aliKofi from "@/assets/ali-kofi.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -41,6 +42,14 @@ const TEAM: Member[] = [
     photo: asiedu.url,
     email: "parkopengineering@gmail.com",
     phone: "+233593992430",
+  },
+  {
+    name: "Ali Kofi",
+    role: "Mason Foreman",
+    bio: "Mason Foreman at Parko P. Engineering Ltd., leading masonry crews and ensuring blockwork, finishes and structural detail are executed to specification across project sites.",
+    photo: aliKofi.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233246788731",
   },
 ];
 
