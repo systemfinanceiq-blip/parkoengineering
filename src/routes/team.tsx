@@ -43,6 +43,14 @@ const TEAM: Member[] = [
     email: "parkopengineering@gmail.com",
     phone: "+233593992430",
   },
+  {
+    name: "Ali Kofi",
+    role: "Mason Foreman",
+    bio: "Mason Foreman at Parko P. Engineering Ltd., leading masonry crews and ensuring blockwork, finishes and structural detail are executed to specification across project sites.",
+    photo: aliKofi.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233246788731",
+  },
 ];
 
 function initials(name: string) {
