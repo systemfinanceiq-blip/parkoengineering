@@ -7,6 +7,9 @@ import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
 import projInfra from "@/assets/project-infrastructure.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
+import interiorVideo from "@/assets/interior-design.mp4.asset.json";
+import woodworksVideo from "@/assets/woodworks-finishing.mp4.asset.json";
+import arch3d from "@/assets/architectural-3d.png.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -23,7 +26,18 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-const PROJECTS = [
+const PROJECTS: Array<{
+  name: string;
+  location: string;
+  sector: string;
+  img: string;
+  video?: string;
+  tag: string;
+  year: string;
+}> = [
+  { name: "Interior Design Showcase", location: "Accra", sector: "Interior Design", img: arch3d.url, video: interiorVideo.url, tag: "interior", year: "2025" },
+  { name: "Woodworks & Finishing", location: "Accra", sector: "Woodworks & Finishing", img: arch3d.url, video: woodworksVideo.url, tag: "woodworks", year: "2025" },
+  { name: "3D Architectural Visualization", location: "East Legon", sector: "3D Architectural", img: arch3d.url, tag: "architectural", year: "2025" },
   { name: "Cedi Tower", location: "Accra", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2024" },
   { name: "Greenfield Estates", location: "Tema", sector: "Residential", img: projResidential, tag: "residential", year: "2023" },
   { name: "Volta Bridge Expansion", location: "Eastern Region", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2023" },
@@ -38,6 +52,9 @@ function PortfolioPage() {
   const [filter, setFilter] = useState("all");
   const filters = [
     { id: "all", label: "All" },
+    { id: "interior", label: "Interior Design" },
+    { id: "woodworks", label: "Woodworks" },
+    { id: "architectural", label: "3D Architectural" },
     { id: "commercial", label: "Commercial" },
     { id: "residential", label: "Residential" },
     { id: "infrastructure", label: "Infrastructure" },
@@ -77,14 +94,27 @@ function PortfolioPage() {
                 className="group relative overflow-hidden rounded-md bg-card border border-border hover:shadow-2xl transition-all"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    loading="lazy"
-                    width={1200}
-                    height={900}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  {p.video ? (
+                    <video
+                      src={p.video}
+                      poster={p.img}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  ) : (
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      loading="lazy"
+                      width={1200}
+                      height={900}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  )}
                   <div className="absolute top-3 left-3 bg-accent text-accent-foreground text-[10px] font-bold tracking-[0.18em] px-2.5 py-1 rounded-sm">
                     {p.sector.toUpperCase()}
                   </div>
