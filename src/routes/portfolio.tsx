@@ -26,7 +26,18 @@ export const Route = createFileRoute("/portfolio")({
   component: PortfolioPage,
 });
 
-const PROJECTS = [
+const PROJECTS: Array<{
+  name: string;
+  location: string;
+  sector: string;
+  img: string;
+  video?: string;
+  tag: string;
+  year: string;
+}> = [
+  { name: "Interior Design Showcase", location: "Accra", sector: "Interior Design", img: arch3d.url, video: interiorVideo.url, tag: "interior", year: "2025" },
+  { name: "Woodworks & Finishing", location: "Accra", sector: "Woodworks & Finishing", img: arch3d.url, video: woodworksVideo.url, tag: "woodworks", year: "2025" },
+  { name: "3D Architectural Visualization", location: "East Legon", sector: "3D Architectural", img: arch3d.url, tag: "architectural", year: "2025" },
   { name: "Cedi Tower", location: "Accra", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2024" },
   { name: "Greenfield Estates", location: "Tema", sector: "Residential", img: projResidential, tag: "residential", year: "2023" },
   { name: "Volta Bridge Expansion", location: "Eastern Region", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2023" },
