@@ -52,6 +52,9 @@ function PortfolioPage() {
   const [filter, setFilter] = useState("all");
   const filters = [
     { id: "all", label: "All" },
+    { id: "interior", label: "Interior Design" },
+    { id: "woodworks", label: "Woodworks" },
+    { id: "architectural", label: "3D Architectural" },
     { id: "commercial", label: "Commercial" },
     { id: "residential", label: "Residential" },
     { id: "infrastructure", label: "Infrastructure" },
