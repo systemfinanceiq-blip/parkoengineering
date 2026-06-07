@@ -94,14 +94,27 @@ function PortfolioPage() {
                 className="group relative overflow-hidden rounded-md bg-card border border-border hover:shadow-2xl transition-all"
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-muted">
-                  <img
-                    src={p.img}
-                    alt={p.name}
-                    loading="lazy"
-                    width={1200}
-                    height={900}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+                  {p.video ? (
+                    <video
+                      src={p.video}
+                      poster={p.img}
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  ) : (
+                    <img
+                      src={p.img}
+                      alt={p.name}
+                      loading="lazy"
+                      width={1200}
+                      height={900}
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                  )}
                   <div className="absolute top-3 left-3 bg-accent text-accent-foreground text-[10px] font-bold tracking-[0.18em] px-2.5 py-1 rounded-sm">
                     {p.sector.toUpperCase()}
                   </div>
