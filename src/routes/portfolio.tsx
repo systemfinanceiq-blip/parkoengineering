@@ -7,6 +7,9 @@ import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
 import projInfra from "@/assets/project-infrastructure.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
+import interiorVideo from "@/assets/interior-design.mp4.asset.json";
+import woodworksVideo from "@/assets/woodworks-finishing.mp4.asset.json";
+import arch3d from "@/assets/architectural-3d.png.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
