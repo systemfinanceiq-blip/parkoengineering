@@ -19,6 +19,9 @@ import poster3 from "@/assets/poster-3.jpg.asset.json";
 import poster4 from "@/assets/poster-4.jpg.asset.json";
 import poster5 from "@/assets/poster-5.jpg.asset.json";
 import poster6 from "@/assets/poster-6.jpg.asset.json";
+import scaffolding1 from "@/assets/scaffolding-1.png.asset.json";
+import scaffolding2 from "@/assets/scaffolding-2.png.asset.json";
+import scaffolding3 from "@/assets/scaffolding-3.png.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -44,6 +47,9 @@ type Item =
   | { type: "video"; src: string; poster: string; caption: string };
 
 const ITEMS: Item[] = [
+  { type: "image", src: scaffolding1.url, caption: "Scaffolding works on-site" },
+  { type: "image", src: scaffolding2.url, caption: "Scaffolding assembly in progress" },
+  { type: "image", src: scaffolding3.url, caption: "Scaffolding setup at project site" },
   { type: "image", src: team1.url, caption: "Site team — project handover" },
   { type: "image", src: team2.url, caption: "Parko crew on-site" },
   { type: "video", src: clip1.url, poster: poster1.url, caption: "On-site progress clip" },
