@@ -22,6 +22,11 @@ import poster6 from "@/assets/poster-6.jpg.asset.json";
 import scaffolding1 from "@/assets/scaffolding-1.png.asset.json";
 import scaffolding2 from "@/assets/scaffolding-2.png.asset.json";
 import scaffolding3 from "@/assets/scaffolding-3.png.asset.json";
+import shiashie1 from "@/assets/shiashie-1.png.asset.json";
+import shiashie2 from "@/assets/shiashie-2.png.asset.json";
+import shiashie3 from "@/assets/shiashie-3.png.asset.json";
+import shiashie4 from "@/assets/shiashie-4.png.asset.json";
+import shiashieClip from "@/assets/shiashie-clip.mp4.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -47,6 +52,11 @@ type Item =
   | { type: "video"; src: string; poster: string; caption: string };
 
 const ITEMS: Item[] = [
+  { type: "image", src: shiashie1.url, caption: "Industrial building — Shiashie, East Legon" },
+  { type: "image", src: shiashie2.url, caption: "Concrete pump on-site — Shiashie, East Legon" },
+  { type: "image", src: shiashie3.url, caption: "Concrete mixer operations — Shiashie, East Legon" },
+  { type: "image", src: shiashie4.url, caption: "Excavation works — Shiashie, East Legon" },
+  { type: "video", src: shiashieClip.url, poster: shiashie1.url, caption: "Industrial build progress — Shiashie, East Legon" },
   { type: "image", src: scaffolding1.url, caption: "Scaffolding works on-site" },
   { type: "image", src: scaffolding2.url, caption: "Scaffolding assembly in progress" },
   { type: "image", src: scaffolding3.url, caption: "Scaffolding setup at project site" },
