@@ -4,6 +4,9 @@ import { PageHeader } from "@/components/PageHeader";
 import { Linkedin, Mail, Phone } from "lucide-react";
 import asiedu from "@/assets/asiedu-ankomah-samuel.jpeg.asset.json";
 import aliKofi from "@/assets/ali-kofi.jpeg.asset.json";
+import kingsley from "@/assets/kingsley-asamoah.jpeg.asset.json";
+import frederick from "@/assets/frederick-dwamena.jpeg.asset.json";
+import alex from "@/assets/alex-ofori-obeng.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
