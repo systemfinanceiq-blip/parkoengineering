@@ -4,6 +4,9 @@ import { PageHeader } from "@/components/PageHeader";
 import { Linkedin, Mail, Phone } from "lucide-react";
 import asiedu from "@/assets/asiedu-ankomah-samuel.jpeg.asset.json";
 import aliKofi from "@/assets/ali-kofi.jpeg.asset.json";
+import kingsley from "@/assets/kingsley-asamoah.jpeg.asset.json";
+import frederick from "@/assets/frederick-dwamena.jpeg.asset.json";
+import alex from "@/assets/alex-ofori-obeng.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -49,7 +52,31 @@ const TEAM: Member[] = [
     bio: "Mason Foreman at Parko P. Engineering Ltd., leading masonry crews and ensuring blockwork, finishes and structural detail are executed to specification across project sites.",
     photo: aliKofi.url,
     email: "parkopengineering@gmail.com",
-    phone: "+233246788731",
+    phone: "+233247253905",
+  },
+  {
+    name: "Kingsley Asamoah",
+    role: "Senior Welder",
+    bio: "Senior Welder at Parko P. Engineering Ltd., handling structural steelwork, fabrication and on-site welding with a sharp eye for precision and safety.",
+    photo: kingsley.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233247253905",
+  },
+  {
+    name: "Frederick Dwamena",
+    role: "Finance Manager",
+    bio: "Finance Manager at Parko P. Engineering Ltd., overseeing budgeting, cost control and financial reporting to keep every project on solid commercial footing.",
+    photo: frederick.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233247253905",
+  },
+  {
+    name: "Alex Ofori Obeng",
+    role: "IT Support",
+    bio: "IT Support at Parko P. Engineering Ltd., maintaining the company's digital tools, devices and connectivity so site and office teams stay productive.",
+    photo: alex.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233247253905",
   },
 ];
 
