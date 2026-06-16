@@ -79,6 +79,14 @@ const TEAM: Member[] = [
     email: "parkopengineering@gmail.com",
     phone: "+233247253905",
   },
+  {
+    name: "Bright Kweku Nartey",
+    role: "Driver / Operator",
+    bio: "Driver and heavy equipment operator at Parko P. Engineering Ltd., responsible for the safe transport of materials and skilled operation of machinery across project sites.",
+    photo: bright.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233247253905",
+  },
 ];
 
 function initials(name: string) {
