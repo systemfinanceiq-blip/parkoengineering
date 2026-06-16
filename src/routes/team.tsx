@@ -7,6 +7,7 @@ import aliKofi from "@/assets/ali-kofi.jpeg.asset.json";
 import kingsley from "@/assets/kingsley-asamoah.jpeg.asset.json";
 import frederick from "@/assets/frederick-dwamena.jpeg.asset.json";
 import alex from "@/assets/alex-ofori-obeng.jpeg.asset.json";
+import bright from "@/assets/bright-kweku-nartey.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
