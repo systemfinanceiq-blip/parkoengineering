@@ -7,6 +7,7 @@ import aliKofi from "@/assets/ali-kofi.jpeg.asset.json";
 import kingsley from "@/assets/kingsley-asamoah.jpeg.asset.json";
 import frederick from "@/assets/frederick-dwamena.jpeg.asset.json";
 import alex from "@/assets/alex-ofori-obeng.jpeg.asset.json";
+import bright from "@/assets/bright-kweku-nartey.jpeg.asset.json";
 
 export const Route = createFileRoute("/team")({
   head: () => ({
@@ -75,6 +76,14 @@ const TEAM: Member[] = [
     role: "IT Support",
     bio: "IT Support at Parko P. Engineering Ltd., maintaining the company's digital tools, devices and connectivity so site and office teams stay productive.",
     photo: alex.url,
+    email: "parkopengineering@gmail.com",
+    phone: "+233247253905",
+  },
+  {
+    name: "Bright Kweku Nartey",
+    role: "Driver / Operator",
+    bio: "Driver and heavy equipment operator at Parko P. Engineering Ltd., responsible for the safe transport of materials and skilled operation of machinery across project sites.",
+    photo: bright.url,
     email: "parkopengineering@gmail.com",
     phone: "+233247253905",
   },
