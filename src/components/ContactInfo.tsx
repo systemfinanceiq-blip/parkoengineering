@@ -10,7 +10,7 @@ export function ContactInfo() {
   ];
   return (
     <div className="bg-card border border-white/10 text-foreground rounded-md p-7 md:p-8">
-      <h3 className="font-display font-bold text-xl uppercase text-white">Get In Touch</h3>
+      <h2 className="font-display font-bold text-xl uppercase text-white">Get In Touch</h2>
       <p className="mt-2 text-sm text-white/70">
         Speak directly with our project consultants.
       </p>

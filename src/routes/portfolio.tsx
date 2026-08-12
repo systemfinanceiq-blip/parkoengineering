@@ -132,7 +132,7 @@ function PortfolioPage() {
                   </div>
                 </div>
                 <div className="p-5 border-t border-border">
-                  <h3 className="font-display font-bold text-lg uppercase tracking-tight">{p.name}</h3>
+                  <h2 className="font-display font-bold text-lg uppercase tracking-tight">{p.name}</h2>
                   <p className="mt-1 text-sm text-muted-foreground flex items-center gap-1.5">
                     <MapPin className="h-3.5 w-3.5" /> {p.location}
                   </p>
