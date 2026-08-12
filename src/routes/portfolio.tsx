@@ -3,9 +3,7 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { MapPin } from "lucide-react";
-import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
-import projInfra from "@/assets/project-infrastructure.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
 import interiorVideo from "@/assets/interior-design.mp4.asset.json";
 import woodworksVideo from "@/assets/woodworks-finishing.mp4.asset.json";
@@ -52,7 +50,7 @@ const PROJECTS: Array<{
   { name: "Plumbing Fixtures & Fittings", location: "Accra", sector: "Fit-Out", img: plumbingPoster.url, video: plumbingVideo.url, tag: "fitout", year: "2025" },
   { name: "Northern Logistics Hub", location: "Kumasi", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2022" },
   { name: "Ridgeview Residences", location: "East Legon", sector: "Residential", img: projResidential, tag: "residential", year: "2022" },
-  { name: "Akosombo Industrial Park", location: "Akosombo", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2020" },
+  
 ];
 
 function PortfolioPage() {
