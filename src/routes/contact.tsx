@@ -8,15 +8,34 @@ import { Upload } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Parko Engineering Limited" },
+      { title: "Contact Us — Parko Engineering Ltd" },
       {
         name: "description",
-        content: "Get in touch with Parko Engineering for project inquiries, quotes and consultations.",
+        content:
+          "Get in touch with Parko Engineering in Ghana for construction project inquiries, quotes and consultations — typical response within 24 hours.",
       },
       { property: "og:title", content: "Contact — Parko Engineering" },
       { property: "og:description", content: "Request a quote or speak with our project consultants." },
+      { property: "og:url", content: "https://parkoengineering.com/contact" },
+    ],
+    links: [{ rel: "canonical", href: "https://parkoengineering.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Parko Engineering Limited",
+          url: "https://parkoengineering.com/contact",
+          email: "parkopengineering@gmail.com",
+          telephone: "+233247253905",
+          address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
+          areaServed: "Ghana",
+        }),
+      },
     ],
   }),
+
   component: ContactPage,
 });
 
