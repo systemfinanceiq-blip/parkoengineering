@@ -46,13 +46,12 @@ const PROJECTS: Array<{
   { name: "Interior Design Showcase", location: "Accra", sector: "Interior Design", img: arch3d.url, video: interiorVideo.url, tag: "interior", year: "2025" },
   { name: "Woodworks & Finishing", location: "Accra", sector: "Woodworks & Finishing", img: arch3d.url, video: woodworksVideo.url, tag: "woodworks", year: "2025" },
   { name: "3D Architectural Visualization", location: "East Legon", sector: "3D Architectural", img: arch3d.url, tag: "architectural", year: "2025" },
-  { name: "Cedi Tower", location: "Accra", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2024" },
-  { name: "Greenfield Estates", location: "Tema", sector: "Residential", img: projResidential, tag: "residential", year: "2023" },
-  { name: "Volta Bridge Expansion", location: "Eastern Region", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2023" },
+  { name: "Site Development Works", location: "Accra", sector: "Site Works", img: siteDevPoster.url, video: siteDevVideo.url, tag: "sitework", year: "2025" },
+  { name: "Sanitary Ware Installation", location: "Accra", sector: "Fit-Out", img: sanitaryPoster.url, video: sanitaryVideo.url, tag: "fitout", year: "2025" },
+  { name: "Construction Equipment Supply", location: "Accra", sector: "Equipment", img: equipmentPoster.url, video: equipmentVideo.url, tag: "equipment", year: "2025" },
+  { name: "Plumbing Fixtures & Fittings", location: "Accra", sector: "Fit-Out", img: plumbingPoster.url, video: plumbingVideo.url, tag: "fitout", year: "2025" },
   { name: "Northern Logistics Hub", location: "Kumasi", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2022" },
   { name: "Ridgeview Residences", location: "East Legon", sector: "Residential", img: projResidential, tag: "residential", year: "2022" },
-  { name: "Coastal Highway Phase II", location: "Cape Coast", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2021" },
-  { name: "Harbour Plaza", location: "Takoradi", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2021" },
   { name: "Akosombo Industrial Park", location: "Akosombo", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2020" },
 ];
 
