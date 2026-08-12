@@ -112,7 +112,7 @@ function Hero() {
           <MaskedHeading
             as="h1"
             className="mt-5 font-display font-black text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]"
-            text={"Building Strong\nFoundations for the Future"}
+            text={"Construction Company\nBuilding Ghana's Future"}
             delay={0.15}
           />
 
