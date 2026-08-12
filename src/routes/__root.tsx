@@ -72,6 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "google-site-verification", content: "YiGWd3Hwj9u1LUITntpWQI9-SE3FPBQLf4GZrOUg08M" },
       { title: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
       {
         name: "description",
