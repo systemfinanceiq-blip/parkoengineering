@@ -26,11 +26,16 @@ export function SiteFooter() {
             projects across Ghana.
           </p>
           <div className="mt-6 flex gap-2">
-            {[Facebook, Linkedin, Twitter, Instagram].map((Icon, i) => (
+            {[
+              { Icon: Facebook, platform: "Facebook" },
+              { Icon: Linkedin, platform: "LinkedIn" },
+              { Icon: Twitter, platform: "X (Twitter)" },
+              { Icon: Instagram, platform: "Instagram" },
+            ].map(({ Icon, platform }) => (
               <a
-                key={i}
+                key={platform}
                 href="#"
-                aria-label="Social link"
+                aria-label={`Parko Engineering on ${platform}`}
                 className="grid h-9 w-9 place-items-center rounded-sm border border-primary-foreground/20 hover:bg-accent hover:text-accent-foreground hover:border-accent transition-colors"
               >
                 <Icon className="h-4 w-4" />

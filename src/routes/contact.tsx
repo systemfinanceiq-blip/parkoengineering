@@ -143,11 +143,10 @@ function ContactPage() {
               </div>
             </div>
 
-            <label className="flex items-center justify-center gap-2 h-11 border border-dashed border-input rounded-sm text-sm text-muted-foreground hover:border-accent cursor-pointer transition-colors">
-              <Upload className="h-4 w-4" />
-              Upload blueprint or project brief (optional)
-              <input type="file" className="hidden" />
-            </label>
+            <p className="text-xs text-muted-foreground">
+              Have blueprints or a project brief? You can attach them directly in the WhatsApp chat
+              after sending this inquiry.
+            </p>
             <button
               type="submit"
               className="w-full bg-accent text-accent-foreground font-bold tracking-wide py-3.5 rounded-sm hover:brightness-95 transition-all"
