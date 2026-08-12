@@ -3,13 +3,19 @@ import { useState } from "react";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { MapPin } from "lucide-react";
-import projCommercial from "@/assets/project-commercial.jpg";
 import projResidential from "@/assets/project-residential.jpg";
-import projInfra from "@/assets/project-infrastructure.jpg";
 import projIndustrial from "@/assets/project-industrial.jpg";
 import interiorVideo from "@/assets/interior-design.mp4.asset.json";
 import woodworksVideo from "@/assets/woodworks-finishing.mp4.asset.json";
 import arch3d from "@/assets/architectural-3d.png.asset.json";
+import siteDevVideo from "@/assets/site-development.mp4.asset.json";
+import siteDevPoster from "@/assets/site-development-poster.jpg.asset.json";
+import sanitaryVideo from "@/assets/sanitaryware.mp4.asset.json";
+import sanitaryPoster from "@/assets/sanitaryware-poster.jpg.asset.json";
+import equipmentVideo from "@/assets/equipment-supply.mp4.asset.json";
+import equipmentPoster from "@/assets/equipment-supply-poster.jpg.asset.json";
+import plumbingVideo from "@/assets/plumbing-fixtures.mp4.asset.json";
+import plumbingPoster from "@/assets/plumbing-fixtures-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -38,14 +44,13 @@ const PROJECTS: Array<{
   { name: "Interior Design Showcase", location: "Accra", sector: "Interior Design", img: arch3d.url, video: interiorVideo.url, tag: "interior", year: "2025" },
   { name: "Woodworks & Finishing", location: "Accra", sector: "Woodworks & Finishing", img: arch3d.url, video: woodworksVideo.url, tag: "woodworks", year: "2025" },
   { name: "3D Architectural Visualization", location: "East Legon", sector: "3D Architectural", img: arch3d.url, tag: "architectural", year: "2025" },
-  { name: "Cedi Tower", location: "Accra", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2024" },
-  { name: "Greenfield Estates", location: "Tema", sector: "Residential", img: projResidential, tag: "residential", year: "2023" },
-  { name: "Volta Bridge Expansion", location: "Eastern Region", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2023" },
+  { name: "Site Development Works", location: "Accra", sector: "Site Works", img: siteDevPoster.url, video: siteDevVideo.url, tag: "sitework", year: "2025" },
+  { name: "Sanitary Ware Installation", location: "Accra", sector: "Fit-Out", img: sanitaryPoster.url, video: sanitaryVideo.url, tag: "fitout", year: "2025" },
+  { name: "Construction Equipment Supply", location: "Accra", sector: "Equipment", img: equipmentPoster.url, video: equipmentVideo.url, tag: "equipment", year: "2025" },
+  { name: "Plumbing Fixtures & Fittings", location: "Accra", sector: "Fit-Out", img: plumbingPoster.url, video: plumbingVideo.url, tag: "fitout", year: "2025" },
   { name: "Northern Logistics Hub", location: "Kumasi", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2022" },
   { name: "Ridgeview Residences", location: "East Legon", sector: "Residential", img: projResidential, tag: "residential", year: "2022" },
-  { name: "Coastal Highway Phase II", location: "Cape Coast", sector: "Infrastructure", img: projInfra, tag: "infrastructure", year: "2021" },
-  { name: "Harbour Plaza", location: "Takoradi", sector: "Commercial", img: projCommercial, tag: "commercial", year: "2021" },
-  { name: "Akosombo Industrial Park", location: "Akosombo", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2020" },
+  
 ];
 
 function PortfolioPage() {
@@ -55,9 +60,11 @@ function PortfolioPage() {
     { id: "interior", label: "Interior Design" },
     { id: "woodworks", label: "Woodworks" },
     { id: "architectural", label: "3D Architectural" },
+    { id: "sitework", label: "Site Works" },
+    { id: "fitout", label: "Fit-Out" },
+    { id: "equipment", label: "Equipment" },
     { id: "commercial", label: "Commercial" },
     { id: "residential", label: "Residential" },
-    { id: "infrastructure", label: "Infrastructure" },
   ];
   const visible = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
 
