@@ -15,11 +15,11 @@ import {
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
-      { title: "Services — Parko Engineering Limited" },
+      { title: "Construction Services in Ghana — Parko" },
       {
         name: "description",
         content:
-          "Construction site supervision, architectural drawings, project management, land surveys, backhoe operating, tipper driving and crane operating.",
+          "Construction site supervision, architectural drawings, project management, land surveys, backhoe operating, tipper driving and crane operating in Ghana.",
       },
       { property: "og:title", content: "Services — Parko Engineering" },
       {
@@ -27,8 +27,34 @@ export const Route = createFileRoute("/services")({
         content:
           "Full-spectrum engineering services from architectural drafting to heavy plant operations.",
       },
+      { property: "og:url", content: "https://parkoengineering.com/services" },
+    ],
+    links: [{ rel: "canonical", href: "https://parkoengineering.com/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            "Construction Site Supervision",
+            "Architectural Drawings",
+            "Project Management",
+            "Land Surveys",
+            "Backhoe Operating",
+            "Tipper Driving",
+            "Crane Operating",
+          ].map((name) => ({
+            "@type": "Service",
+            name,
+            serviceType: name,
+            areaServed: "Ghana",
+            provider: { "@id": "https://parkoengineering.com/#organization" },
+          })),
+        }),
+      },
     ],
   }),
+
   component: ServicesPage,
 });
 

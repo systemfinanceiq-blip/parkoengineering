@@ -73,25 +73,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { name: "google-site-verification", content: "YiGWd3Hwj9u1LUITntpWQI9-SE3FPBQLf4GZrOUg08M" },
-      { title: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
+      { title: "Parko Engineering Ltd — Construction & Civil Works" },
       {
         name: "description",
         content:
-          "Parko Engineering Limited delivers world-class commercial, residential and civil infrastructure projects across Ghana with structural excellence and precision engineering.",
+          "Parko Engineering Limited delivers commercial, residential and civil infrastructure projects across Ghana with structural excellence and precision.",
       },
       { name: "author", content: "Parko Engineering Limited" },
-      { property: "og:title", content: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
+      { property: "og:site_name", content: "Parko Engineering Limited" },
+      { property: "og:title", content: "Parko Engineering Ltd — Construction & Civil Works" },
       {
         property: "og:description",
         content:
-          "Commercial construction, residential developments, civil infrastructure and project management — delivered on time and on budget.",
+          "Commercial construction, residential developments, civil infrastructure and project management in Ghana — delivered on time and on budget.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:title", content: "Parko Engineering Limited — Engineering Legacies. Building Reality." },
-      { name: "description", content: "Your First Choice For Quality Construction" },
-      { property: "og:description", content: "Your First Choice For Quality Construction" },
-      { name: "twitter:description", content: "Your First Choice For Quality Construction" },
+      { name: "twitter:title", content: "Parko Engineering Ltd — Construction & Civil Works" },
+      {
+        name: "twitter:description",
+        content:
+          "Commercial construction, residential developments, civil infrastructure and project management in Ghana — delivered on time and on budget.",
+      },
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/242NMwcbJlVRzCysKdlx3ETZ9HT2/social-images/social-1779867526846-Parko_Logo.webp" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/242NMwcbJlVRzCysKdlx3ETZ9HT2/social-images/social-1779867526846-Parko_Logo.webp" },
     ],
@@ -104,7 +107,35 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "stylesheet", href: appCss },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": "https://parkoengineering.com/#organization",
+              name: "Parko Engineering Limited",
+              url: "https://parkoengineering.com",
+              logo: "https://storage.googleapis.com/gpt-engineer-file-uploads/242NMwcbJlVRzCysKdlx3ETZ9HT2/social-images/social-1779867526846-Parko_Logo.webp",
+              email: "parkopengineering@gmail.com",
+              telephone: "+233247253905",
+              areaServed: "GH",
+            },
+            {
+              "@type": "WebSite",
+              "@id": "https://parkoengineering.com/#website",
+              name: "Parko Engineering Limited",
+              url: "https://parkoengineering.com",
+              publisher: { "@id": "https://parkoengineering.com/#organization" },
+            },
+          ],
+        }),
+      },
+    ],
   }),
+
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

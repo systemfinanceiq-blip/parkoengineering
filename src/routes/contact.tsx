@@ -8,15 +8,34 @@ import { Upload } from "lucide-react";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact Us — Parko Engineering Limited" },
+      { title: "Contact Us — Parko Engineering Ltd" },
       {
         name: "description",
-        content: "Get in touch with Parko Engineering for project inquiries, quotes and consultations.",
+        content:
+          "Get in touch with Parko Engineering in Ghana for construction project inquiries, quotes and consultations — typical response within 24 hours.",
       },
       { property: "og:title", content: "Contact — Parko Engineering" },
       { property: "og:description", content: "Request a quote or speak with our project consultants." },
+      { property: "og:url", content: "https://parkoengineering.com/contact" },
+    ],
+    links: [{ rel: "canonical", href: "https://parkoengineering.com/contact" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Parko Engineering Limited",
+          url: "https://parkoengineering.com/contact",
+          email: "parkopengineering@gmail.com",
+          telephone: "+233247253905",
+          address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
+          areaServed: "Ghana",
+        }),
+      },
     ],
   }),
+
   component: ContactPage,
 });
 
@@ -83,11 +102,11 @@ function ContactPage() {
             </div>
             <div className="grid sm:grid-cols-2 gap-5">
               <div>
-                <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
+                <label htmlFor="projectType" className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   PROJECT TYPE
                 </label>
                 <div className="geo-field rounded-sm">
-                  <select name="projectType" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none">
+                  <select id="projectType" name="projectType" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none">
                     <option>Commercial</option>
                     <option>Residential</option>
                     <option>Infrastructure</option>
@@ -96,11 +115,11 @@ function ContactPage() {
                 </div>
               </div>
               <div>
-                <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
+                <label htmlFor="budget" className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                   ESTIMATED BUDGET
                 </label>
                 <div className="geo-field rounded-sm">
-                  <select name="budget" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none">
+                  <select id="budget" name="budget" className="w-full h-11 px-3 bg-background border border-input rounded-sm text-sm focus:outline-none">
                     <option>Under $100K</option>
                     <option>$100K – $500K</option>
                     <option>$500K – $2M</option>
@@ -110,11 +129,12 @@ function ContactPage() {
               </div>
             </div>
             <div>
-              <label className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
+              <label htmlFor="brief" className="block text-xs font-bold tracking-wider text-foreground mb-1.5">
                 PROJECT BRIEF
               </label>
               <div className="geo-field rounded-sm">
                 <textarea
+                  id="brief"
                   name="brief"
                   rows={5}
                   placeholder="Tell us about scope, location, and timeline..."
@@ -122,6 +142,7 @@ function ContactPage() {
                 />
               </div>
             </div>
+
             <label className="flex items-center justify-center gap-2 h-11 border border-dashed border-input rounded-sm text-sm text-muted-foreground hover:border-accent cursor-pointer transition-colors">
               <Upload className="h-4 w-4" />
               Upload blueprint or project brief (optional)

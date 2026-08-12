@@ -34,14 +34,23 @@ import { EASE_STRUCT } from "@/components/motion/easing";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Parko P. Engineering — Building Strong Foundations for the Future" },
+      { title: "Construction Company in Ghana | Parko Engineering" },
       {
         name: "description",
         content:
-          "Trusted residential & commercial construction experts delivering quality, safety, and on-time results across Ghana.",
+          "Parko Engineering is a trusted construction company in Ghana delivering residential, commercial and civil projects with quality, safety and on-time results.",
       },
+      { property: "og:title", content: "Construction Company in Ghana | Parko Engineering" },
+      {
+        property: "og:description",
+        content:
+          "Residential and commercial construction experts in Ghana — quality, safety and on-time delivery.",
+      },
+      { property: "og:url", content: "https://parkoengineering.com/" },
     ],
+    links: [{ rel: "canonical", href: "https://parkoengineering.com/" }],
   }),
+
   component: HomePage,
 });
 
@@ -103,7 +112,7 @@ function Hero() {
           <MaskedHeading
             as="h1"
             className="mt-5 font-display font-black text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.02]"
-            text={"Building Strong\nFoundations for the Future"}
+            text={"Construction Company\nBuilding Ghana's Future"}
             delay={0.15}
           />
 
