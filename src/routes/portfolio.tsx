@@ -60,9 +60,11 @@ function PortfolioPage() {
     { id: "interior", label: "Interior Design" },
     { id: "woodworks", label: "Woodworks" },
     { id: "architectural", label: "3D Architectural" },
+    { id: "sitework", label: "Site Works" },
+    { id: "fitout", label: "Fit-Out" },
+    { id: "equipment", label: "Equipment" },
     { id: "commercial", label: "Commercial" },
     { id: "residential", label: "Residential" },
-    { id: "infrastructure", label: "Infrastructure" },
   ];
   const visible = filter === "all" ? PROJECTS : PROJECTS.filter((p) => p.tag === filter);
 
