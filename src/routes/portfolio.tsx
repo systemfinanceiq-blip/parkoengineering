@@ -10,6 +10,14 @@ import projIndustrial from "@/assets/project-industrial.jpg";
 import interiorVideo from "@/assets/interior-design.mp4.asset.json";
 import woodworksVideo from "@/assets/woodworks-finishing.mp4.asset.json";
 import arch3d from "@/assets/architectural-3d.png.asset.json";
+import siteDevVideo from "@/assets/site-development.mp4.asset.json";
+import siteDevPoster from "@/assets/site-development-poster.jpg.asset.json";
+import sanitaryVideo from "@/assets/sanitaryware.mp4.asset.json";
+import sanitaryPoster from "@/assets/sanitaryware-poster.jpg.asset.json";
+import equipmentVideo from "@/assets/equipment-supply.mp4.asset.json";
+import equipmentPoster from "@/assets/equipment-supply-poster.jpg.asset.json";
+import plumbingVideo from "@/assets/plumbing-fixtures.mp4.asset.json";
+import plumbingPoster from "@/assets/plumbing-fixtures-poster.jpg.asset.json";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
