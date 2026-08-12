@@ -48,8 +48,8 @@ const PROJECTS: Array<{
   { name: "Sanitary Ware Installation", location: "Accra", sector: "Fit-Out", img: sanitaryPoster.url, video: sanitaryVideo.url, tag: "fitout", year: "2025" },
   { name: "Construction Equipment Supply", location: "Accra", sector: "Equipment", img: equipmentPoster.url, video: equipmentVideo.url, tag: "equipment", year: "2025" },
   { name: "Plumbing Fixtures & Fittings", location: "Accra", sector: "Fit-Out", img: plumbingPoster.url, video: plumbingVideo.url, tag: "fitout", year: "2025" },
-  { name: "Northern Logistics Hub", location: "Kumasi", sector: "Commercial", img: projIndustrial, tag: "commercial", year: "2022" },
-  { name: "Ridgeview Residences", location: "East Legon", sector: "Residential", img: projResidential, tag: "residential", year: "2022" },
+  { name: "Commercial Build Progress", location: "Accra", sector: "Commercial", img: proj05Poster.url, video: proj05Video.url, tag: "commercial", year: "2025" },
+  { name: "Residential Build Progress", location: "Accra", sector: "Residential", img: proj06Poster.url, video: proj06Video.url, tag: "residential", year: "2025" },
   
 ];
 
