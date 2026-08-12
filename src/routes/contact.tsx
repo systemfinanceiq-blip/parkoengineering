@@ -3,7 +3,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { PageHeader } from "@/components/PageHeader";
 import { ContactInfo } from "@/components/ContactInfo";
-import { Upload } from "lucide-react";
+
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

@@ -135,9 +135,9 @@ function TeamPage() {
                   </div>
                 </div>
                 <div className="p-5 border-t border-border">
-                  <h3 className="font-display font-bold text-lg uppercase tracking-tight">
+                  <h2 className="font-display font-bold text-lg uppercase tracking-tight">
                     {m.name}
-                  </h3>
+                  </h2>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
                     {m.bio}
                   </p>
